@@ -2,7 +2,6 @@ import React from 'react';
 import { Input, InputGroup, InputGroupAddon, Button } from 'reactstrap';
 import PropTypes from 'prop-types';
 import 'bootstrap/dist/css/bootstrap.css';
-import { navigateTo } from "gatsby-link";
 
 function encode(data) {
   return Object.keys(data)
@@ -31,7 +30,7 @@ export default class EmailForm extends React.Component {
         ...this.state,
       }),
     })
-      .then(() => navigateTo(form.getAttribute('action')))
+      .then(() => alert("Thanks for signing up! We will reach out to you shortly."))
       .catch(error => alert(error))
   }
 
@@ -42,7 +41,6 @@ export default class EmailForm extends React.Component {
       <form
         name={name}
         method="post"
-        action="#"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
         onSubmit={this.handleSubmit}
@@ -56,6 +54,7 @@ export default class EmailForm extends React.Component {
           />
           <Input
             type="email"
+            name="email"
             placeholder="Enter Your Email"
             onChange={this.handleChange}
           />
