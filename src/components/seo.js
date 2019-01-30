@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
-import favicon48 from "../images/favicon.ico";
+// import favicon48 from "../images/favicon.ico";
 
 function SEO({ description, lang, meta, keywords, title, author }) {
   return (
@@ -65,7 +65,7 @@ function SEO({ description, lang, meta, keywords, title, author }) {
               )
               .concat(meta)}
             link={[
-              { rel: 'icon', type: 'image/png', sizes: "48x48", href: `${favicon48}` },
+              { rel: 'icon', type: 'image/png', sizes: "48x48", href: `${siteData.favicon.fixed.src}` },
             ]}
           />
         )
@@ -108,6 +108,11 @@ const detailsQuery = graphql`
           author
           githubLink
           tagline
+          favicon {
+            fixed(width: 48) {
+              src
+            }
+          }
         }
       }
     }
