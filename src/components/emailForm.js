@@ -56,6 +56,7 @@ export default class EmailForm extends React.Component {
             type="email"
             name="email"
             placeholder="Enter Your Email"
+            required
             onChange={this.handleChange}
           />
           <InputGroupAddon addonType="prepend">
