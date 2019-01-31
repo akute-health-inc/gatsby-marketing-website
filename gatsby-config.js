@@ -4,7 +4,7 @@ if (process.env.ENVIRONMENT !== "production") {
   dotenv.config();
 }
 
-const { CONTENTFUL_SPACE_ID, CONTENTFUL_ACCESS_TOKEN } = process.env;
+const { CONTENTFUL_SPACE_ID, CONTENTFUL_ACCESS_TOKEN, GOOGLE_ANALYTICS_ID } = process.env;
 
 module.exports = {
   siteMetadata: {
@@ -31,6 +31,16 @@ module.exports = {
       options: {
         spaceId: CONTENTFUL_SPACE_ID,
         accessToken: CONTENTFUL_ACCESS_TOKEN,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: GOOGLE_ANALYTICS_ID,
+        // Puts tracking script in the head instead of the body
+        head: true,
+        // Avoids sending pageview hits from custom paths
+        exclude: ["/sitemap.xml", "/robots.txt"],
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

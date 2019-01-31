@@ -5,6 +5,7 @@ import {
 } from 'reactstrap';
 import Img from 'gatsby-image';
 import 'bootstrap/dist/css/bootstrap.css';
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 export default class Footer extends React.Component {
   render() {
@@ -22,19 +23,19 @@ export default class Footer extends React.Component {
           </div>
           <div className="col-lg-4" style={{color: "white", fontSize: "0.8rem"}}>
             Email us at{' '}
-            <a
+            <OutboundLink
               style={{color: "white", fontSize: "0.8rem"}}
               href={`mailto:${data.companyContactEmail}`}
               target="_blank"
               rel="noopener noreferrer"
             >
               {data.companyContactEmail}
-            </a>
+            </OutboundLink>
           </div>
           <div className="col-lg-4">
             {data.socialPages.map((socialPage, index) => {
               return (
-                <a
+                <OutboundLink
                 key={socialPage}
                 style={{color: "white", fontSize: "0.8rem", marginRight: "10px"}}
                 href={socialPage}
@@ -42,7 +43,7 @@ export default class Footer extends React.Component {
                 rel="noopener noreferrer"
               >
                 <Img fixed={data.socialImages[index].fixed} alt={data.socialImages[index].title} />
-              </a>
+              </OutboundLink>
               )
             })}
           </div>

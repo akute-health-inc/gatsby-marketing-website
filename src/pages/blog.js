@@ -1,4 +1,5 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 import Navigation from '../components/navigation';
 import Footer from '../components/Footer';
 import PropTypes from 'prop-types';

@@ -8,6 +8,7 @@ import {
   CardImg,
 } from 'reactstrap';
 import PropTypes from 'prop-types';
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 import 'bootstrap/dist/css/bootstrap.css';
 
 export default class TeamCard extends React.Component {
@@ -25,9 +26,9 @@ export default class TeamCard extends React.Component {
             <CardSubtitle style={{fontStyle: "oblique"}}>{person.titles[index]}</CardSubtitle>
             <CardText>{person.bios[index]}</CardText>
             <div className="row">
-              <a href={person.twitters[index]} className="fab fa-twitter" style={{margin: "auto 10px"}}>{}</a>
-              <a href={person.linkedIns[index]} className="fab fa-linkedin-in" style={{margin: "auto 10px"}}>{}</a>
-              <a href={`mailto:${person.emails[index]}`} className="fa fa-envelope" style={{margin: "auto 10px"}}>{}</a>
+              <OutboundLink href={person.twitters[index]} className="fab fa-twitter" style={{margin: "auto 10px"}}>{}</OutboundLink>
+              <OutboundLink href={person.linkedIns[index]} className="fab fa-linkedin-in" style={{margin: "auto 10px"}}>{}</OutboundLink>
+              <OutboundLink href={`mailto:${person.emails[index]}`} className="fa fa-envelope" style={{margin: "auto 10px"}}>{}</OutboundLink>
             </div>
           </CardBody>
         </Card>

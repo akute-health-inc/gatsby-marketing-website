@@ -1,4 +1,5 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 import Navigation from '../components/navigation';
 import BlogHeader from '../components/BlogHeader';
 import Footer from '../components/Footer';
@@ -11,6 +12,7 @@ import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import { BLOCKS } from '@contentful/rich-text-types';
 import 'bootstrap/dist/css/bootstrap.css';
 import '../css/blog.css';
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 class BlogPostTemplate extends React.Component {
   createHTML(article) {
@@ -53,10 +55,10 @@ class BlogPostTemplate extends React.Component {
           </div>
           <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossOrigin="anonymous"></link>
           <div id="share">
-            <a className="facebook" href={`https://www.facebook.com/share.php?u=${this.props.location.href}&title=${blogData.title}`} target="blank"><i className="fab fa-facebook-f"></i></a>
-            <a className="twitter" href={`https://twitter.com/intent/tweet?status=${blogData.title}+${this.props.location.href}`} target="blank"><i className="fab fa-twitter"></i></a>
-            <a className="linkedin" href={`https://www.linkedin.com/shareArticle?mini=true&url=${this.props.location.href}&title=${blogData.title}&source=${this.props.location.origin}`} target="blank"><i className="fab fa-linkedin-in"></i></a>
-            <a className="pinterest" href={`https://pinterest.com/pin/create/bookmarklet/?media=${blogData.image.fluid.src}&url=${this.props.location.href}&is_video=false&description=${blogData.title}`} target="blank"><i className="fab fa-pinterest-p"></i></a>
+            <OutboundLink className="facebook" href={`https://www.facebook.com/share.php?u=${this.props.location.href}&title=${blogData.title}`} target="blank"><i className="fab fa-facebook-f"></i></OutboundLink>
+            <OutboundLink className="twitter" href={`https://twitter.com/intent/tweet?status=${blogData.title}+${this.props.location.href}`} target="blank"><i className="fab fa-twitter"></i></OutboundLink>
+            <OutboundLink className="linkedin" href={`https://www.linkedin.com/shareArticle?mini=true&url=${this.props.location.href}&title=${blogData.title}&source=${this.props.location.origin}`} target="blank"><i className="fab fa-linkedin-in"></i></OutboundLink>
+            <OutboundLink className="pinterest" href={`https://pinterest.com/pin/create/bookmarklet/?media=${blogData.image.fluid.src}&url=${this.props.location.href}&is_video=false&description=${blogData.title}`} target="blank"><i className="fab fa-pinterest-p"></i></OutboundLink>
           </div>
         </Container>
         <Footer data={siteData.allContentfulFooter}/>
