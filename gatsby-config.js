@@ -4,7 +4,7 @@ if (process.env.ENVIRONMENT !== "production") {
   dotenv.config();
 }
 
-const { CONTENTFUL_SPACE_ID, CONTENTFUL_ACCESS_TOKEN, GOOGLE_ANALYTICS_ID } = process.env;
+const { CONTENTFUL_SPACE_ID, CONTENTFUL_ACCESS_TOKEN, CONTENTFUL_HOST, GOOGLE_ANALYTICS_ID } = process.env;
 
 module.exports = {
   siteMetadata: {
@@ -31,6 +31,7 @@ module.exports = {
       options: {
         spaceId: CONTENTFUL_SPACE_ID,
         accessToken: CONTENTFUL_ACCESS_TOKEN,
+        host: CONTENTFUL_HOST,
       },
     },
     {
