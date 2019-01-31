@@ -20,6 +20,14 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sitemap`,
     {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: SITE_URL,
+        sitemap: `${SITE_URL}/sitemap.xml`,
+        policy: [{ userAgent: '*', allow: '/' }]
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `pages`,
