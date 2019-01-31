@@ -4,7 +4,7 @@ if (process.env.ENVIRONMENT !== "production") {
   dotenv.config();
 }
 
-const { CONTENTFUL_SPACE_ID, CONTENTFUL_ACCESS_TOKEN, CONTENTFUL_HOST, GOOGLE_ANALYTICS_ID } = process.env;
+const { CONTENTFUL_SPACE_ID, CONTENTFUL_ACCESS_TOKEN, CONTENTFUL_HOST, GOOGLE_ANALYTICS_ID, SITE_URL } = process.env;
 
 module.exports = {
   siteMetadata: {
@@ -14,9 +14,11 @@ module.exports = {
     name: "",
     tagline: "",
     githubLink: "",
+    siteUrl: SITE_URL,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
