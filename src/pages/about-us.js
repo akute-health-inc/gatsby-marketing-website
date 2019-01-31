@@ -13,7 +13,7 @@ import {
 const AboutUsPage = ({data}) => (
   <div>
     <Navigation data={data.allContentfulNavbar} />
-    <SEO title="Home" />
+    <SEO title="About Us" />
     <Container>
       <div className="text-center">
         <h1 class="display-4">About Us</h1>
