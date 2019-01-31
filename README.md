@@ -8,7 +8,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-You need to create a .env file with your Contentful accessToken and space ID
+You need to create a .env file with the following keys.
 
 ```
 CONTENTFUL_SPACE_ID=*
@@ -20,7 +20,7 @@ SITE_URL=[https://www.example.com]
 
 ### Installing
 
-Clone the repo. Then install the packages from package.json
+Clone the repo. Then install the packages from package.json.
 
 ```
 npm install
@@ -30,7 +30,7 @@ Then make sure the app works by running npm start and opening to localhost:8000.
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+Deploy by linking your Github repo to netlify and adding a Netlify webhook to your Contentful space.
 
 ## Built With
 
