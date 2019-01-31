@@ -13,6 +13,9 @@ You need to create a .env file with your Contentful accessToken and space ID
 ```
 CONTENTFUL_SPACE_ID=*
 CONTENTFUL_ACCESS_TOKEN=*
+CONTENTFUL_HOST=[preview|cnd].contentful.com
+GOOGLE_ANALYTICS_ID=*
+SITE_URL=[https://www.example.com]
 ```
 
 ### Installing
