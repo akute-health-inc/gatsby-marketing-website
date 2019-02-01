@@ -1,3 +1,6 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/17b4bfb7-3319-4904-b663-67d5667657d4/deploy-status)](https://app.netlify.com/sites/akutehealth/deploys)
+https://www.akutehealth.com
+
 # Project Title
 
 A marketing website using Gatsby, Contentful, and Netlify
