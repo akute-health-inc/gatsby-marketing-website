@@ -18,7 +18,7 @@ class Blog extends React.Component {
       <div>
         <Navigation data={siteData.allContentfulNavbar} />
         <SEO title="Blog" />
-        <Container id="site-main" className="site-main outer" role="main">
+        <Container id="site-main" className="site-main outer" role="main" style={{minHeight: "85vh"}}>
           <div className="inner">
             <div className="post-feed">
               {blogData.map(edge => {
