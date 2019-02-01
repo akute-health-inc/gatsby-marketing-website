@@ -77,6 +77,7 @@ export const pageQuery = graphql`
         node {
           companyName 
           companyContactEmail
+          driftAppId
           socialPages
           socialImages {
             fixed(width: 30) {

@@ -6,6 +6,7 @@ import {
 import Img from 'gatsby-image';
 import 'bootstrap/dist/css/bootstrap.css';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
+import Drift from 'react-driftjs';
 
 export default class Footer extends React.Component {
   render() {
@@ -13,6 +14,7 @@ export default class Footer extends React.Component {
     
     return (
       <div className="footer" style={{backgroundColor: "#333C44"}}>
+        <Drift appId={data.driftAppId} />
         <Container>
         <br />
         <div className="row">
