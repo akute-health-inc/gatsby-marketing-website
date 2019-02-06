@@ -3,9 +3,10 @@ import { graphql } from 'gatsby';
 import Navigation from '../components/navigation';
 import BlogHeader from '../components/BlogHeader';
 import Footer from '../components/Footer';
+import EmailForm from '../components/emailForm';
 import {
   Container,
-} from 'reactstrap'
+} from 'reactstrap';
 import PropTypes from 'prop-types';
 import SEO from '../components/seo';
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
@@ -25,6 +26,7 @@ class BlogPostTemplate extends React.Component {
     const siteData = this.props.data;
     const blogData = this.props.pageContext.data;
     const jsonContent = JSON.parse(blogData.content.content);
+
     const options = {
       renderNode: {
         [BLOCKS.PARAGRAPH]: (node, next) => `<p><blog-p>${next(node.content)}</blog-p></p>`,
@@ -37,7 +39,7 @@ class BlogPostTemplate extends React.Component {
       }
     };
     const articleContent = documentToHtmlString(jsonContent, options);
-    console.log(articleContent);
+
     return (
       <div>
         <meta property="og:title" content={blogData.title} />
@@ -60,6 +62,8 @@ class BlogPostTemplate extends React.Component {
             <OutboundLink className="linkedin" href={`https://www.linkedin.com/shareArticle?mini=true&url=${this.props.location.href}&title=${blogData.title}&source=${this.props.location.origin}`} target="blank"><i className="fab fa-linkedin-in"></i></OutboundLink>
             <OutboundLink className="pinterest" href={`https://pinterest.com/pin/create/bookmarklet/?media=${blogData.image.fluid.src}&url=${this.props.location.href}&is_video=false&description=${blogData.title}`} target="blank"><i className="fab fa-pinterest-p"></i></OutboundLink>
           </div>
+          <EmailForm styles={siteData.allContentfulStyles.edges[0].node.childContentfulStylesButtonJsonNode} name={this.props.location.pathname}>Sign up for our newsletter</EmailForm>
+          <br />
         </Container>
         <Footer data={siteData.allContentfulFooter}/>
       </div>
