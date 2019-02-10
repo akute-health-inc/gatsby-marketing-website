@@ -19,8 +19,8 @@ export default class Hero extends React.Component {
         <Jumbotron style={{backgroundColor: 'transparent'}}>
           <div className="row">
             <div className="col-lg-7">
-              <h1 className="display-5">{content.title}</h1>
-              <p className="lead">{content.subtitle}</p>
+              <h1 className="display-4">{content.title}</h1>
+              <p className="lead" style={{fontSize: "1.4em"}}>{content.subtitle}</p>
               <EmailForm styles={styles} name={location}>Learn More</EmailForm>
             </div>
             <div className="col-lg-5 col-md-8">
