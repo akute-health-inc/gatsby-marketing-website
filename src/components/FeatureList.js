@@ -9,6 +9,22 @@ export default class FeatureList extends React.Component {
     const feature = this.props.data;
     const iteration = this.props.iteration;
     const image = this.props.image;
+    let imgTag = (
+      <Img
+        fluid={image.fluid}
+        alt={image.title}
+      />
+    );
+    if (image.title === "aptible") {
+      imgTag = (
+        <a href="https://www.aptible.com">
+          <Img
+            fluid={image.fluid}
+            alt={image.title}
+          />
+        </a>
+      );
+    }
 
     const leftFeature = (
       <Container key={feature.title} fluid>
@@ -19,10 +35,7 @@ export default class FeatureList extends React.Component {
               <p className="lead">{feature.subtitle}</p>
             </div>
             <div className="col-lg-4 col-md-6 order-lg-12 order-12">
-              <Img
-                fluid={image.fluid}
-                alt={image.title}
-              />
+              {imgTag}
             </div>
           </div>
         </Container>
@@ -34,10 +47,7 @@ export default class FeatureList extends React.Component {
         <Container>
           <div className="row" style={{ borderColor: 'lightGrey' }}>
             <div className="col-lg-4 col-md-6 order-lg-1 order-12">
-              <Img
-                fluid={image.fluid}
-                alt={image.title}
-              />
+              {imgTag}
             </div>
             <div className="col-lg-8 col-md-6 order-lg-12 order-1 align-self-center">
               <h3 className="display-5">{feature.title}</h3>
