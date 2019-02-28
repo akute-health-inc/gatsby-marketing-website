@@ -21,7 +21,7 @@ export default class Hero extends React.Component {
             <div className="col-lg-7">
               <h1 className="display-4">{content.title}</h1>
               <p className="lead" style={{fontSize: "1.4em"}}>{content.subtitle}</p>
-              <EmailForm styles={styles} name={location}>Learn More</EmailForm>
+              <EmailForm styles={styles} name={location}>Request a Demo</EmailForm>
             </div>
             <div className="col-lg-5 col-md-8">
               <br />
