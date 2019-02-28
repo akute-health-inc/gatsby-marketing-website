@@ -12,7 +12,9 @@ const IndexPage = ({data, location}) => (
   <div>
     <Navigation data={data.allContentfulNavbar} />
     <SEO title="Patients" />
-    <Hero data={data.allContentfulPatientPage} styles={data.allContentfulStyles.edges[0].node.childContentfulStylesButtonJsonNode} location={location.pathname} />
+    <Hero data={data.allContentfulPatientPage} styles={data.allContentfulStyles.edges[0].node.childContentfulStylesButtonJsonNode} location={location.pathname}>
+      Learn More
+    </Hero>
     <AppStore data={data.allContentfulPatientPage} styles={data.allContentfulStyles.edges[0].node.childContentfulStylesButtonJsonNode} />
     {/* <Banner data={data.allContentfulPatientPage} /> */}
     {data.allContentfulPatientPage.edges[0].node.childContentfulPatientPageFeatureListJsonNode.feature.map((feature, index) => {

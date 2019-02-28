@@ -11,7 +11,9 @@ const IndexPage = ({data, location}) => (
   <div>
     <Navigation data={data.allContentfulNavbar} />
     <SEO title="Home" />
-    <Hero data={data.allContentfulHomePage} styles={data.allContentfulStyles.edges[0].node.childContentfulStylesButtonJsonNode} location={location.pathname} />
+    <Hero data={data.allContentfulHomePage} styles={data.allContentfulStyles.edges[0].node.childContentfulStylesButtonJsonNode} location={location.pathname}>
+      Request a Demo
+    </Hero>
     {/* <Banner data={data.allContentfulHomePage} /> */}
     {data.allContentfulHomePage.edges[0].node.childContentfulHomePageFeatureListJsonNode.feature.map((feature, index) => {
       return (
