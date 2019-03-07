@@ -26,6 +26,8 @@ class BlogPostTemplate extends React.Component {
     const siteData = this.props.data;
     const blogData = this.props.pageContext.data;
     const jsonContent = JSON.parse(blogData.content.content);
+    console.log('in blog post');
+    console.log(this.props);
 
     const options = {
       renderNode: {
