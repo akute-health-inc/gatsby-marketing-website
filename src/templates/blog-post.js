@@ -47,6 +47,11 @@ class BlogPostTemplate extends React.Component {
 
     return (
       <div>
+        <meta name="twitter:title" content={blogData.title} />
+        <meta name="twitter:description" content={blogData.subtitle} />
+        <meta name="twitter:image" content={imageUrl} />
+        <meta name="twitter:site" content="@AkuteHealth" />
+        <meta name="twitter:creator" content="@SharudAgarwal" />
         <meta property="og:title" content={blogData.title} />
         <meta property="og:image" content={imageUrl} />
         <meta property="og:description" content={blogData.subtitle} />
