@@ -28,6 +28,7 @@ class BlogPostTemplate extends React.Component {
     const location = this.props.location;
     const origin = "https://www.akutehealth.com";
     const href = origin + location.pathname;
+    const imageUrl = "https:" + blogData.image.fluid.src;
     const jsonContent = JSON.parse(blogData.content.content);
 
     const options = {
@@ -46,7 +47,7 @@ class BlogPostTemplate extends React.Component {
     return (
       <div>
         <meta property="og:title" content={blogData.title} />
-        <meta property="og:image" content={blogData.image.fluid.src} />
+        <meta property="og:image" content={imageUrl} />
         <meta property="og:description" content={blogData.subtitle} />
         <meta property="og:url" content={href} />
         <meta property="og:type" content="article" />
@@ -63,7 +64,7 @@ class BlogPostTemplate extends React.Component {
             <OutboundLink className="facebook" href={`https://www.facebook.com/share.php?u=${href}&title=${blogData.title}`} target="blank"><i className="fab fa-facebook-f"></i></OutboundLink>
             <OutboundLink className="twitter" href={`https://twitter.com/intent/tweet?status=${blogData.title}+${href}`} target="blank"><i className="fab fa-twitter"></i></OutboundLink>
             <OutboundLink className="linkedin" href={`https://www.linkedin.com/shareArticle?mini=true&url=${href}&title=${blogData.title}&source=${origin}`} target="blank"><i className="fab fa-linkedin-in"></i></OutboundLink>
-            <OutboundLink className="pinterest" href={`https://pinterest.com/pin/create/bookmarklet/?media=${blogData.image.fluid.src}&url=${href}&is_video=false&description=${blogData.title}`} target="blank"><i className="fab fa-pinterest-p"></i></OutboundLink>
+            <OutboundLink className="pinterest" href={`https://pinterest.com/pin/create/bookmarklet/?media=${imageUrl}&url=${href}&is_video=false&description=${blogData.title}`} target="blank"><i className="fab fa-pinterest-p"></i></OutboundLink>
           </div>
           <EmailForm styles={siteData.allContentfulStyles.edges[0].node.childContentfulStylesButtonJsonNode} name={location.pathname}>Sign up for our newsletter</EmailForm>
           <br />
