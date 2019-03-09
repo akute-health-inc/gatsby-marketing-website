@@ -26,9 +26,9 @@ class BlogPostTemplate extends React.Component {
     const siteData = this.props.data;
     const blogData = this.props.pageContext.data;
     const location = this.props.location;
+    const origin = "https://www.akutehealth.com";
+    const href = origin + location.pathname;
     const jsonContent = JSON.parse(blogData.content.content);
-    console.log('in blog post');
-    console.log(this.props.location.href);
 
     const options = {
       renderNode: {
@@ -48,7 +48,7 @@ class BlogPostTemplate extends React.Component {
         <meta property="og:title" content={blogData.title} />
         <meta property="og:image" content={blogData.image.fluid.src} />
         <meta property="og:description" content={blogData.subtitle} />
-        <meta property="og:url" content={this.props.location.href} />
+        <meta property="og:url" content={href} />
         <meta property="og:type" content="article" />
         <Navigation data={siteData.allContentfulNavbar} />
         <SEO title={blogData.title} keywords={blogData.keywords} description={blogData.subtitle} author={blogData.author} />
@@ -60,10 +60,10 @@ class BlogPostTemplate extends React.Component {
           </div>
           <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossOrigin="anonymous"></link>
           <div id="share">
-            <OutboundLink className="facebook" href={`https://www.facebook.com/share.php?u=${location.href}&title=${blogData.title}`} target="blank"><i className="fab fa-facebook-f"></i></OutboundLink>
-            <OutboundLink className="twitter" href={`https://twitter.com/intent/tweet?status=${blogData.title}+${location.href}`} target="blank"><i className="fab fa-twitter"></i></OutboundLink>
-            <OutboundLink className="linkedin" href={`https://www.linkedin.com/shareArticle?mini=true&url=${location.href}&title=${blogData.title}&source=${location.origin}`} target="blank"><i className="fab fa-linkedin-in"></i></OutboundLink>
-            <OutboundLink className="pinterest" href={`https://pinterest.com/pin/create/bookmarklet/?media=${blogData.image.fluid.src}&url=${location.href}&is_video=false&description=${blogData.title}`} target="blank"><i className="fab fa-pinterest-p"></i></OutboundLink>
+            <OutboundLink className="facebook" href={`https://www.facebook.com/share.php?u=${href}&title=${blogData.title}`} target="blank"><i className="fab fa-facebook-f"></i></OutboundLink>
+            <OutboundLink className="twitter" href={`https://twitter.com/intent/tweet?status=${blogData.title}+${href}`} target="blank"><i className="fab fa-twitter"></i></OutboundLink>
+            <OutboundLink className="linkedin" href={`https://www.linkedin.com/shareArticle?mini=true&url=${href}&title=${blogData.title}&source=${origin}`} target="blank"><i className="fab fa-linkedin-in"></i></OutboundLink>
+            <OutboundLink className="pinterest" href={`https://pinterest.com/pin/create/bookmarklet/?media=${blogData.image.fluid.src}&url=${href}&is_video=false&description=${blogData.title}`} target="blank"><i className="fab fa-pinterest-p"></i></OutboundLink>
           </div>
           <EmailForm styles={siteData.allContentfulStyles.edges[0].node.childContentfulStylesButtonJsonNode} name={location.pathname}>Sign up for our newsletter</EmailForm>
           <br />
