@@ -28,7 +28,7 @@ class BlogPostTemplate extends React.Component {
     const location = this.props.location;
     const origin = "https://www.akutehealth.com";
     const href = origin + location.pathname;
-    let imageUrl = "https:" + blogData.image.fluid.src;
+    let imageUrl = "http:" + blogData.image.fluid.src;
     imageUrl = imageUrl.slice(0,imageUrl.lastIndexOf('?'));
     const jsonContent = JSON.parse(blogData.content.content);
 
@@ -58,7 +58,7 @@ class BlogPostTemplate extends React.Component {
         <meta property="og:url" content={href} />
         <meta property="og:type" content="article" />
         <Navigation data={siteData.allContentfulNavbar} />
-        {/* <SEO title={blogData.title} keywords={blogData.keywords} description={blogData.subtitle} author={blogData.author} /> */}
+        <SEO title={blogData.title} keywords={blogData.keywords} description={blogData.subtitle} author={blogData.author} />
         <BlogHeader image={blogData.image} title={blogData.title} subtitle={blogData.subtitle} postDate={blogData.postDate} author={blogData.author} />
         <br />
         <Container>
