@@ -47,7 +47,9 @@ class BlogPostTemplate extends React.Component {
 
     return (
       <div>
-        <meta name="twitter:title" content={blogData.title} />
+        <Navigation data={siteData.allContentfulNavbar} />
+        <SEO title={blogData.title} keywords={blogData.keywords} description={blogData.subtitle} author={blogData.author} type='article' image={imageUrl} />
+        {/* <meta name="twitter:title" content={blogData.title} />
         <meta name="twitter:description" content={blogData.subtitle} />
         <meta name="twitter:image" content={imageUrl} />
         <meta name="twitter:site" content="@AkuteHealth" />
@@ -56,9 +58,7 @@ class BlogPostTemplate extends React.Component {
         <meta property="og:image" content={imageUrl} />
         <meta property="og:description" content={blogData.subtitle} />
         <meta property="og:url" content={href} />
-        <meta property="og:type" content="article" />
-        <Navigation data={siteData.allContentfulNavbar} />
-        <SEO title={blogData.title} keywords={blogData.keywords} description={blogData.subtitle} author={blogData.author} />
+        <meta property="og:type" content="article" /> */}
         <BlogHeader image={blogData.image} title={blogData.title} subtitle={blogData.subtitle} postDate={blogData.postDate} author={blogData.author} />
         <br />
         <Container>
