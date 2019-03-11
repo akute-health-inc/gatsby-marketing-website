@@ -28,7 +28,7 @@ class BlogPostTemplate extends React.Component {
     const location = this.props.location;
     const origin = "https://www.akutehealth.com";
     const href = origin + location.pathname;
-    let imageUrl = "https:" + blogData.image.fluid.src;
+    let imageUrl = "http:" + blogData.image.fluid.src;
     imageUrl = imageUrl.slice(0,imageUrl.lastIndexOf('?'));
     const jsonContent = JSON.parse(blogData.content.content);
 
