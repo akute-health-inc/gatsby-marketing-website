@@ -25,10 +25,10 @@ const WhyAkuteHealthPage = ({data, location}) => (
       </CardGroup>
     </Container>
     <br />
-    <Container>
+    {/* <Container>
       <EmailForm styles={data.allContentfulStyles.edges[0].node.childContentfulStylesButtonJsonNode} name={location.pathname}>Get Started</EmailForm>
     </Container>
-    <br />
+    <br /> */}
     <Footer data={data.allContentfulFooter} />
   </div>
 )
