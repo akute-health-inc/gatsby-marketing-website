@@ -48,7 +48,6 @@ export default class EmailForm extends React.Component {
     const styles = this.props.styles
     const name = this.props.name
 
-    // styles.fontSize = "1.4em"
     return (
       <Fragment>
         <Button style={{fontSize: "1.4em"}} className="btn-block" color="primary" onClick={this.toggle}>
