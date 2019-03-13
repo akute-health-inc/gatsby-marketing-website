@@ -1,0 +1,13 @@
+ul {
+  list-style: none;
+}
+
+li.good:before {
+  content: '✓ ';
+  color: green;
+}
+
+li.bad:before {
+  content: "x ";
+  color: red;
+}

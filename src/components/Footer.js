@@ -38,14 +38,14 @@ export default class Footer extends React.Component {
             {data.socialPages.map((socialPage, index) => {
               return (
                 <OutboundLink
-                key={socialPage}
-                style={{color: "white", fontSize: "0.8rem", marginRight: "10px"}}
-                href={socialPage}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Img fixed={data.socialImages[index].fixed} alt={data.socialImages[index].title} />
-              </OutboundLink>
+                  key={socialPage}
+                  style={{color: "white", fontSize: "0.8rem", marginRight: "10px"}}
+                  href={socialPage}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Img fixed={data.socialImages[index].fixed} alt={data.socialImages[index].title} />
+                </OutboundLink>
               )
             })}
           </div>

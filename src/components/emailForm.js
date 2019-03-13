@@ -1,5 +1,5 @@
-import React from 'react';
-import { Input, InputGroup, InputGroupAddon, Button } from 'reactstrap';
+import React, { Fragment } from 'react';
+import { Input, InputGroup, InputGroupAddon, Button, Modal, ModalBody, ModalFooter } from 'reactstrap';
 import PropTypes from 'prop-types';
 import 'bootstrap/dist/css/bootstrap.css';
 
@@ -12,11 +12,15 @@ function encode(data) {
 export default class EmailForm extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {}
+    this.state = {
+      modal: false
+    };
+
+    this.toggle = this.toggle.bind(this);
   }
 
   handleChange = event => {
-    this.setState({ [event.target.name]: event.target.value })
+    this.setState({ [event.target.name]: event.target.value });
   }
 
   handleSubmit = event => {
@@ -34,38 +38,57 @@ export default class EmailForm extends React.Component {
       .catch(error => alert(error))
   }
 
+  toggle() {
+    this.setState(prevState => ({
+      modal: !prevState.modal
+    }));
+  }
+
   render() {
     const styles = this.props.styles
     const name = this.props.name
+
+    // styles.fontSize = "1.4em"
     return (
-      <form
-        name={name}
-        method="post"
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
-        onSubmit={this.handleSubmit}
-      >
-        <InputGroup>
-          <Input
-            type="hidden"
-            name="form-name"
-            value={name}
-            onChange={this.handleChange}
-          />
-          <Input
-            type="email"
-            name="email"
-            placeholder="Enter Your Email"
-            required
-            onChange={this.handleChange}
-          />
-          <InputGroupAddon addonType="prepend">
-            <Button style={styles} type="submit">
-              {this.props.children}
-            </Button>
-          </InputGroupAddon>
-        </InputGroup>
-      </form>
+      <Fragment>
+        <Button style={{fontSize: "1.4em"}} className="btn-block" color="primary" onClick={this.toggle}>
+          {this.props.children}
+        </Button>
+        <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+          <form
+            name={name}
+            method="post"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            onSubmit={this.handleSubmit}
+          >
+            <InputGroup>
+              <ModalBody>
+                <Input
+                  type="hidden"
+                  name="form-name"
+                  value={name}
+                  onChange={this.handleChange}
+                />
+                <Input
+                  type="email"
+                  name="email"
+                  placeholder="Enter Your Email"
+                  required
+                  onChange={this.handleChange}
+                />
+              </ModalBody>
+              <ModalFooter>
+                <InputGroupAddon addonType="prepend">
+                  <Button style={styles} type="submit" onClick={this.toggle}>
+                    Submit
+                  </Button>
+                </InputGroupAddon>
+              </ModalFooter>
+            </InputGroup>
+          </form>
+        </Modal>
+      </Fragment>
     )
   }
 }

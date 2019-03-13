@@ -5,16 +5,33 @@ import SEO from '../components/seo';
 import Hero from '../components/hero';
 import Footer from '../components/Footer';
 import FeatureList from '../components/FeatureList';
+import Steps from '../components/Steps';
+import {
+  Container,
+  CardGroup,
+} from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.css';
+// import EmailForm from '../components/emailForm';
 
 const IndexPage = ({data, location}) => (
   <div>
     <Navigation data={data.allContentfulNavbar} />
     <SEO title="Home" />
     <Hero data={data.allContentfulHomePage} styles={data.allContentfulStyles.edges[0].node.childContentfulStylesButtonJsonNode} location={location.pathname}>
-      Request a Demo
+      Learn More
     </Hero>
+    <Container>
+      <div className="text-center">
+        <h1 className="display-5">How it Works</h1>
+      </div>
+      <br />
+      <CardGroup>
+        <Steps data={data.allContentfulHomePage.edges[0].node} styles={data.allContentfulStyles.edges[0].node.childContentfulStylesButtonJsonNode} />
+      </CardGroup>
+    </Container>
+    <br />
     {/* <Banner data={data.allContentfulHomePage} /> */}
+
     {data.allContentfulHomePage.edges[0].node.childContentfulHomePageFeatureListJsonNode.feature.map((feature, index) => {
       return (
         <FeatureList key={feature.title} data={feature} iteration={index} image={data.allContentfulHomePage.edges[0].node.featureImages[index]} />
@@ -75,6 +92,10 @@ export const pageQuery = graphql`
               ...GatsbyContentfulFluid
             }
           }
+          stepNames
+          step1
+          step2
+          step3
         }
       }
     }

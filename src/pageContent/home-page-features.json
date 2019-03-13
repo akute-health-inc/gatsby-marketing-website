@@ -1,0 +1,28 @@
+{
+	"feature": [
+		{
+			"title": "Save staff from having to call/email/fax multiple times to coordinate care.",
+			"subtitle": "Automated tools that proactively reach out to patients to ensure they have gotten their medications, are following their care plan, and are able to make it to their appointments."
+		},
+		{
+			"title": "No more lost revenue due to hospital readmissions, lost referrals, and no shows.",
+			"subtitle": "Improve outcomes and lower costs with technology and skilled workers coordinating care at every step."
+		},
+		{
+			"title": "Incoming records are parsed for PHI and categorized.",
+			"subtitle": "Stop spending hours finding the necessary patient information in faxes and re-typing the data into your computer. Our artificial intelligence tells you what is in the documents."
+		},
+		{
+			"title": "Make patient forms electronic and mobile compatible.",
+			"subtitle": "Patients can fill out forms faster and more accurately from their own devices. View the results online and import into the EHR."
+		},
+		{
+			"title": "Data security is the first priority",
+			"subtitle": "All our processes are HIPAA compliant. We use advanced encryption standards to encrypt data at rest and at transit."
+		},
+		{
+			"title": "EHR integration.",
+			"subtitle": "We integrate with your EHR to ensure a seamless experience for you."
+		}
+	]
+}
