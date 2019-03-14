@@ -9,7 +9,7 @@ import {
   CardGroup,
 } from 'reactstrap';
 import ComparisonCard from '../components/ComparisonCard';
-import EmailForm from '../components/emailForm';
+// import EmailForm from '../components/emailForm';
 
 const WhyAkuteHealthPage = ({data, location}) => (
   <div>
