@@ -13,7 +13,7 @@ const IndexPage = ({data, location}) => (
     <Navigation data={data.allContentfulNavbar} />
     <SEO title="Patients" />
     <Hero data={data.allContentfulPatientPage} styles={data.allContentfulStyles.edges[0].node.childContentfulStylesButtonJsonNode} location={location.pathname}>
-      Learn More
+      Sign Up For Early Access to Price Compare
     </Hero>
     <AppStore data={data.allContentfulPatientPage} styles={data.allContentfulStyles.edges[0].node.childContentfulStylesButtonJsonNode} />
     {/* <Banner data={data.allContentfulPatientPage} /> */}
