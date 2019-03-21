@@ -5,22 +5,22 @@ import SEO from '../components/seo';
 import Hero from '../components/hero';
 import Footer from '../components/Footer';
 import FeatureList from '../components/FeatureList';
-import Steps from '../components/Steps';
-import {
-  Container,
-  CardGroup,
-} from 'reactstrap';
+// import Steps from '../components/Steps';
+// import {
+//   Container,
+//   CardGroup,
+// } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 // import EmailForm from '../components/emailForm';
 
 const IndexPage = ({data, location}) => (
   <div>
     <Navigation data={data.allContentfulNavbar} />
-    <SEO title="Home" />
+    <SEO title="A Brand New Electronic Health Record System" />
     <Hero data={data.allContentfulHomePage} styles={data.allContentfulStyles.edges[0].node.childContentfulStylesButtonJsonNode} location={location.pathname}>
       Learn More
     </Hero>
-    <Container>
+    {/* <Container>
       <div className="text-center">
         <h1 className="display-5">How it Works</h1>
       </div>
@@ -28,8 +28,8 @@ const IndexPage = ({data, location}) => (
       <CardGroup>
         <Steps data={data.allContentfulHomePage.edges[0].node} styles={data.allContentfulStyles.edges[0].node.childContentfulStylesButtonJsonNode} />
       </CardGroup>
-    </Container>
-    <br />
+    </Container> */}
+    {/* <br /> */}
     {/* <Banner data={data.allContentfulHomePage} /> */}
 
     {data.allContentfulHomePage.edges[0].node.childContentfulHomePageFeatureListJsonNode.feature.map((feature, index) => {
