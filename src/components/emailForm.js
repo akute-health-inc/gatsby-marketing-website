@@ -1,7 +1,15 @@
-import React, { Fragment } from 'react';
-import { Input, InputGroup, InputGroupAddon, Button, Modal, ModalBody, ModalFooter } from 'reactstrap';
-import PropTypes from 'prop-types';
-import 'bootstrap/dist/css/bootstrap.css';
+import React, { Fragment } from 'react'
+import {
+  Input,
+  InputGroup,
+  InputGroupAddon,
+  Button,
+  Modal,
+  ModalBody,
+  ModalFooter,
+} from 'reactstrap'
+import PropTypes from 'prop-types'
+import 'bootstrap/dist/css/bootstrap.css'
 
 function encode(data) {
   return Object.keys(data)
@@ -13,14 +21,14 @@ export default class EmailForm extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      modal: false
-    };
+      modal: false,
+    }
 
-    this.toggle = this.toggle.bind(this);
+    this.toggle = this.toggle.bind(this)
   }
 
   handleChange = event => {
-    this.setState({ [event.target.name]: event.target.value });
+    this.setState({ [event.target.name]: event.target.value })
   }
 
   handleSubmit = event => {
@@ -34,14 +42,16 @@ export default class EmailForm extends React.Component {
         ...this.state,
       }),
     })
-      .then(() => alert("Thanks for signing up! We will reach out to you shortly."))
+      .then(() =>
+        alert('Thanks for signing up! We will reach out to you shortly.')
+      )
       .catch(error => alert(error))
   }
 
   toggle() {
     this.setState(prevState => ({
-      modal: !prevState.modal
-    }));
+      modal: !prevState.modal,
+    }))
   }
 
   render() {
@@ -50,10 +60,19 @@ export default class EmailForm extends React.Component {
 
     return (
       <Fragment>
-        <Button style={{fontSize: "1.4em"}} className="btn-block" color="primary" onClick={this.toggle}>
+        <Button
+          style={{ fontSize: '1.4em' }}
+          className="btn-block"
+          color="primary"
+          onClick={this.toggle}
+        >
           {this.props.children}
         </Button>
-        <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+        <Modal
+          isOpen={this.state.modal}
+          toggle={this.toggle}
+          className={this.props.className}
+        >
           <form
             name={name}
             method="post"

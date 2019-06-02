@@ -1,22 +1,27 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
-import { StaticQuery, graphql } from 'gatsby';
+import React from 'react'
+import PropTypes from 'prop-types'
+import Helmet from 'react-helmet'
+import { StaticQuery, graphql } from 'gatsby'
 
-function SEO({ description, lang, meta, keywords, title, author, type, image }) {
+function SEO({
+  description,
+  lang,
+  meta,
+  keywords,
+  title,
+  author,
+  type,
+  image,
+}) {
   return (
     <StaticQuery
       query={detailsQuery}
       render={data => {
-        const siteData = data.allContentfulSeo.edges[0].node;
-        const metaDescription =
-          description || siteData.description;
-        const siteAuthor = 
-          author || siteData.author;
-        const ogType = 
-          type || 'website';
-        const siteImage = 
-          image || '';
+        const siteData = data.allContentfulSeo.edges[0].node
+        const metaDescription = description || siteData.description
+        const siteAuthor = author || siteData.author
+        const ogType = type || 'website'
+        const siteImage = image || ''
         return (
           <Helmet
             htmlAttributes={{
@@ -80,7 +85,22 @@ function SEO({ description, lang, meta, keywords, title, author, type, image }) 
               )
               .concat(meta)}
             link={[
-              { rel: 'icon', type: 'image/png', sizes: "48x48", href: `${siteData.favicon.fixed.src}` },
+              {
+                rel: 'icon',
+                type: 'image/png',
+                sizes: '48x48',
+                href: `${siteData.favicon.fixed.src}`,
+              },
+              {
+                rel: 'stylesheet',
+                href:
+                  'https://fonts.googleapis.com/css?family=Comfortaa:700&display=swap',
+              },
+              {
+                rel: 'stylesheet',
+                href:
+                  'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/fontawesome.min.css',
+              },
             ]}
           />
         )

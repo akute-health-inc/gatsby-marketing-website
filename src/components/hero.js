@@ -1,7 +1,8 @@
 import React from 'react'
-import { Jumbotron, Container, Button } from 'reactstrap'
+import { Jumbotron, Container } from 'reactstrap'
 import PropTypes from 'prop-types'
 import 'bootstrap/dist/css/bootstrap.css'
+import '../css/fontStyle.css'
 import EmailForm from './emailForm'
 
 export default class Hero extends React.Component {
@@ -10,32 +11,47 @@ export default class Hero extends React.Component {
     const styles = this.props.styles
     const location = this.props.location
     return (
-      <div style={{ backgroundColor: 'lightgrey' }}>
+      <div className="darkBackground">
         <Container>
           <Jumbotron style={{ backgroundColor: 'transparent' }}>
             <div className="row">
               <div className="col-lg-7">
-                <h1 className="display-5">{content.title}</h1>
+                <h1 className="display-5 title">{content.title}</h1>
+                <h1 className="display-5 title" style={{ color: 'black' }}>
+                  Anytime. Anywhere.
+                </h1>
                 {/* <p className="lead" style={{fontSize: "1.4em"}}>{content.subtitle}</p>
                 <EmailForm styles={styles} name={location}>{this.props.children}</EmailForm> */}
-              </div>
-              <div className="col-lg-5 col-md-8">
+                {/* </div> */}
+                {/* <div className="col-lg-5 col-md-8"> */}
                 {/* <br /> */}
-                <p className="lead" style={{ fontSize: '1.4em' }}>
+                <p className="lead" style={{ fontSize: '1.6em' }}>
                   {content.subtitle}
                 </p>
-                {this.props.children !== 'Signup for the Waitlist' && (
-                  <EmailForm styles={styles} name={location}>
-                    {this.props.children}
-                  </EmailForm>
-                )}
-                {this.props.children === 'Signup for the Waitlist' && (
-                  <Button href="https://signup.akutehealth.com" color="primary">
+                {/* {this.props.children !== 'Signup for Early Access' && ( */}
+                <EmailForm styles={styles} name={location}>
+                  {this.props.children}
+                </EmailForm>
+                {/* )} */}
+                {/* {this.props.children === 'Signup for Early Access' && (
+                  <Button
+                    href="https://signup.akutehealth.com"
+                    color="primary"
+                    style={{ fontSize: '1.4em' }}
+                    className="btn-block"
+                  >
                     {this.props.children}
                   </Button>
-                )}
-                {/* <img className="img-fluid mx-auto d-block" style={{maxHeight: "75vh", width: "auto"}} src={content.bannerImage.fixed.src} alt={content.bannerImage.title} /> */}
+                )} */}
               </div>
+              {/* <div className="col-lg-5 col-md-8">
+                <img
+                  className="img-fluid mx-auto d-block"
+                  style={{ maxHeight: '75vh', width: 'auto' }}
+                  src={content.bannerImage.fixed.src}
+                  alt={content.bannerImage.title}
+                />
+              </div> */}
             </div>
           </Jumbotron>
         </Container>

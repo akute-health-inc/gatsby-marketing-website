@@ -1,36 +1,34 @@
-import React from 'react';
-import { Container } from 'reactstrap';
-import PropTypes from 'prop-types';
-import Img from 'gatsby-image';
-import 'bootstrap/dist/css/bootstrap.css';
+import React from 'react'
+import { Container } from 'reactstrap'
+import PropTypes from 'prop-types'
+import Img from 'gatsby-image'
+import 'bootstrap/dist/css/bootstrap.css'
 
 export default class FeatureList extends React.Component {
   render() {
-    const feature = this.props.data;
-    const iteration = this.props.iteration;
-    const image = this.props.image;
-    let imgTag = (
-      <Img
-        fluid={image.fluid}
-        alt={image.title}
-      />
-    );
-    if (image.title === "aptible") {
+    const feature = this.props.data
+    const iteration = this.props.iteration
+    const image = this.props.image
+    let imgTag = <Img fluid={image.fluid} alt={image.title} />
+    if (image.title === 'aptible') {
       imgTag = (
         <a href="https://www.aptible.com">
-          <Img
-            fluid={image.fluid}
-            alt={image.title}
-          />
+          <Img fluid={image.fluid} alt={image.title} />
         </a>
-      );
+      )
     }
-
+    if (image.title === 'Booking') {
+      imgTag = (
+        <a href="./how-it-works">
+          <Img fluid={image.fluid} alt={image.title} />
+        </a>
+      )
+    }
     const leftFeature = (
       <Container key={feature.title} fluid>
         <Container>
-        <div className="row" style={{ borderColor: 'white' }}>
-          <div className="col-lg-8 col-md-6 order-lg-1 order-12 align-self-center">
+          <div className="row" style={{ borderColor: 'white' }}>
+            <div className="col-lg-8 col-md-6 order-lg-1 order-12 align-self-center">
               <h3 className="display-5">{feature.title}</h3>
               <p className="lead">{feature.subtitle}</p>
             </div>
@@ -50,7 +48,14 @@ export default class FeatureList extends React.Component {
               {imgTag}
             </div>
             <div className="col-lg-8 col-md-6 order-lg-12 order-1 align-self-center">
-              <h3 className="display-5">{feature.title}</h3>
+              {image.title === 'Booking' && (
+                <a href="./how-it-works" style={{ color: '#61b47b' }}>
+                  <h3 className="display-5">{feature.title}</h3>
+                </a>
+              )}
+              {image.title !== 'Booking' && (
+                <h3 className="display-5">{feature.title}</h3>
+              )}
               <p className="lead">{feature.subtitle}</p>
             </div>
           </div>
@@ -58,14 +63,10 @@ export default class FeatureList extends React.Component {
       </Container>
     )
 
-    if (iteration%2) {
-      return (
-        leftFeature
-      )
+    if (iteration % 2) {
+      return leftFeature
     } else {
-      return (
-        rightFeature
-      )
+      return rightFeature
     }
   }
 }
@@ -73,5 +74,5 @@ export default class FeatureList extends React.Component {
 FeatureList.propTypes = {
   data: PropTypes.object.isRequired,
   iteration: PropTypes.number.isRequired,
-  image: PropTypes.object.isRequired
+  image: PropTypes.object.isRequired,
 }

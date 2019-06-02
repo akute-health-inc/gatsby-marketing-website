@@ -16,7 +16,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 const IndexPage = ({ data, location }) => (
   <div>
     <Navigation data={data.allContentfulNavbar} />
-    <SEO title="A Brand New Electronic Health Record System" />
+    <SEO title="Software connecting healthcare providers to patients." />
     <Hero
       data={data.allContentfulHomePage}
       styles={
@@ -25,7 +25,7 @@ const IndexPage = ({ data, location }) => (
       }
       location={location.pathname}
     >
-      Signup for the Waitlist
+      Signup for Early Access
     </Hero>
     {/* <Container>
       <div className="text-center">

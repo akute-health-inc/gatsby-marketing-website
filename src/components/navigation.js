@@ -11,6 +11,7 @@ import {
 } from 'reactstrap'
 import PropTypes from 'prop-types'
 import Img from 'gatsby-image'
+import '../css/fontStyle.css'
 
 export default class Navigation extends React.Component {
   constructor(props) {
@@ -34,7 +35,7 @@ export default class Navigation extends React.Component {
 
     return (
       <Container>
-        <Navbar sticky="top" color="white" light expand="lg">
+        <Navbar sticky="top" light expand="lg">
           <NavbarBrand href="/">
             <Img fixed={brand.fixed} alt="Akute Health" />
           </NavbarBrand>
@@ -44,9 +45,9 @@ export default class Navigation extends React.Component {
               <NavItem key="home">
                 <NavLink href="/">Home</NavLink>
               </NavItem>
-              <NavItem key="signup">
+              {/* <NavItem key="signup">
                 <NavLink href="https://signup.akutehealth.com">Signup</NavLink>
-              </NavItem>
+              </NavItem> */}
               {links.map(link => {
                 return (
                   <NavItem key={link}>
