@@ -5,13 +5,8 @@ import SEO from '../components/seo'
 import Hero from '../components/hero'
 import Footer from '../components/Footer'
 import FeatureList from '../components/FeatureList'
-// import Steps from '../components/Steps';
-// import {
-//   Container,
-//   CardGroup,
-// } from 'reactstrap';
+import { Container, Button } from 'reactstrap'
 import 'bootstrap/dist/css/bootstrap.css'
-// import EmailForm from '../components/emailForm';
 
 const IndexPage = ({ data, location }) => (
   <div>
@@ -53,6 +48,19 @@ const IndexPage = ({ data, location }) => (
         )
       }
     )}
+    <br />
+    <Container>
+      <Button
+        style={{ fontSize: '1.4em' }}
+        className="btn-block"
+        color="primary"
+      >
+        <a href="/pricing" style={{ color: 'white' }}>
+          Learn More
+        </a>
+      </Button>
+    </Container>
+    <br />
     <Footer data={data.allContentfulFooter} />
   </div>
 )
