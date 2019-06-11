@@ -20,7 +20,7 @@ const IndexPage = ({ data, location }) => (
       }
       location={location.pathname}
     >
-      Signup for Early Access
+      Sign up for Early Access
     </Hero>
     {/* <Container>
       <div className="text-center">
