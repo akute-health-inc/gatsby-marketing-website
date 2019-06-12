@@ -20,7 +20,7 @@ const PricingPage = ({data}) => (
         <p className="lead">{data.allContentfulPricingPage.edges[0].node.subtitle.subtitle}</p>
       </div>
       <CardGroup>
-        <PricingCard data={data.allContentfulPricingPage.edges[0].node} styles={data.allContentfulStyles.edges[0].node.childContentfulStylesButtonJsonNode} />
+        <PricingCard data={data.allContentfulPricingPage.edges[0].node} styles={data.allContentfulStyles.edges[0].node.childContentfulStylesButtonJsonNode} signupPage={true}/>
       </CardGroup>
     </Container>
     <br />

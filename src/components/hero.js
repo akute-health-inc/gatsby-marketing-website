@@ -28,11 +28,13 @@ export default class Hero extends React.Component {
                 <p className="lead" style={{ fontSize: '1.6em' }}>
                   {content.subtitle}
                 </p>
-                {/* {this.props.children !== 'Signup for Early Access' && ( */}
-                <EmailForm styles={styles} name={location}>
+                <EmailForm
+                  styles={styles}
+                  name={location}
+                  signupPage={this.props.signupPage}
+                >
                   {this.props.children}
                 </EmailForm>
-                {/* )} */}
                 {/* {this.props.children === 'Signup for Early Access' && (
                   <Button
                     href="https://signup.akutehealth.com"

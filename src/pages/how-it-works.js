@@ -37,6 +37,7 @@ const HowItWorksPage = ({ data, location }) => (
             .childContentfulStylesButtonJsonNode
         }
         name={location.pathname}
+        signupPage={true}
       >
         Sign Up
       </EmailForm>

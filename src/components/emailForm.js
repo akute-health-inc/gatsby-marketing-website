@@ -57,55 +57,76 @@ export default class EmailForm extends React.Component {
   render() {
     const styles = this.props.styles
     const name = this.props.name
+    const signupPage = this.props.signupPage
 
     return (
       <Fragment>
-        <Button
-          style={{ fontSize: '1.4em' }}
-          className="btn-block"
-          color="primary"
-          onClick={this.toggle}
-        >
-          {this.props.children}
-        </Button>
-        <Modal
-          isOpen={this.state.modal}
-          toggle={this.toggle}
-          className={this.props.className}
-        >
-          <form
-            name={name}
-            method="post"
-            data-netlify="true"
-            data-netlify-honeypot="bot-field"
-            onSubmit={this.handleSubmit}
-          >
-            <InputGroup>
-              <ModalBody>
-                <Input
-                  type="hidden"
-                  name="form-name"
-                  value={name}
-                  onChange={this.handleChange}
-                />
-                <Input
-                  type="email"
-                  name="email"
-                  placeholder="Enter Your Email"
-                  required
-                  onChange={this.handleChange}
-                />
-              </ModalBody>
-              <ModalFooter>
-                <InputGroupAddon addonType="prepend">
-                  <Button style={styles} type="submit" onClick={this.toggle}>
-                    Submit
-                  </Button>
-                </InputGroupAddon>
-              </ModalFooter>
-            </InputGroup>
-          </form>
-        </Modal>
+        {signupPage && (
+          <Fragment>
+            <Button
+              style={{ fontSize: '1.4em' }}
+              className="btn-block"
+              color="primary"
+              onClick={() => (window.location = '/signup')}
+            >
+              {this.props.children}
+            </Button>
+          </Fragment>
+        )}
+        {!signupPage && (
+          <Fragment>
+            <Button
+              style={{ fontSize: '1.4em' }}
+              className="btn-block"
+              color="primary"
+              onClick={this.toggle}
+            >
+              {this.props.children}
+            </Button>
+            <Modal
+              isOpen={this.state.modal}
+              toggle={this.toggle}
+              className={this.props.className}
+            >
+              <form
+                name={name}
+                method="post"
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
+                onSubmit={this.handleSubmit}
+              >
+                <InputGroup>
+                  <ModalBody>
+                    <Input
+                      type="hidden"
+                      name="form-name"
+                      value={name}
+                      onChange={this.handleChange}
+                    />
+                    <Input
+                      type="email"
+                      name="email"
+                      placeholder="Enter Your Email"
+                      required
+                      onChange={this.handleChange}
+                    />
+                  </ModalBody>
+                  <ModalFooter>
+                    <InputGroupAddon addonType="prepend">
+                      <Button
+                        style={styles}
+                        type="submit"
+                        onClick={this.toggle}
+                      >
+                        Submit
+                      </Button>
+                    </InputGroupAddon>
+                  </ModalFooter>
+                </InputGroup>
+              </form>
+            </Modal>
+          </Fragment>
+        )}
       </Fragment>
     )
   }

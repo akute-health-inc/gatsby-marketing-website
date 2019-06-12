@@ -19,8 +19,9 @@ const IndexPage = ({ data, location }) => (
           .childContentfulStylesButtonJsonNode
       }
       location={location.pathname}
+      signupPage={true}
     >
-      Sign up for Early Access
+      Sign up for Free
     </Hero>
     {/* <Container>
       <div className="text-center">
@@ -54,10 +55,9 @@ const IndexPage = ({ data, location }) => (
         style={{ fontSize: '1.4em' }}
         className="btn-block"
         color="primary"
+        onClick={() => (window.location = '/pricing')}
       >
-        <a href="/pricing" style={{ color: 'white' }}>
-          Learn More
-        </a>
+        Learn More
       </Button>
     </Container>
     <br />
@@ -68,7 +68,7 @@ const IndexPage = ({ data, location }) => (
 export default IndexPage
 
 export const pageQuery = graphql`
-  query basicPageQuery {
+  query {
     allContentfulNavbar {
       edges {
         node {
