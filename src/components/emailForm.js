@@ -97,12 +97,8 @@ export default class EmailForm extends React.Component {
               >
                 <InputGroup>
                   <ModalBody>
-                    <Input
-                      type="hidden"
-                      name="form-name"
-                      value={name}
-                      onChange={this.handleChange}
-                    />
+                    <Input type="hidden" name="bot-field" />
+                    <Input type="hidden" name="form-name" value={name} />
                     <Input
                       type="email"
                       name="email"
