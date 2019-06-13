@@ -19,7 +19,7 @@ const SignUp = ({ data, location }) => (
           data.allContentfulStyles.edges[0].node
             .childContentfulStylesButtonJsonNode
         }
-        name="form 1"
+        name="/"
       >
         Sign Up
       </EmailForm>
