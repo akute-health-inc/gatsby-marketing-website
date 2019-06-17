@@ -11,9 +11,11 @@ export default class Hero extends React.Component {
     const styles = this.props.styles
     const location = this.props.location
     return (
-      <div className="darkBackground">
+      <div className="heroBackground">
         <Container>
-          <Jumbotron style={{ backgroundColor: 'transparent' }}>
+          <Jumbotron
+            style={{ backgroundColor: 'transparent', marginBottom: '0' }}
+          >
             <div className="row">
               <div className="col-lg-7">
                 <h1 className="display-5 title">{content.title}</h1>

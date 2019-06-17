@@ -11,7 +11,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 const IndexPage = ({ data, location }) => (
   <div>
     <Navigation data={data.allContentfulNavbar} />
-    <SEO title="Software connecting healthcare providers to patients." />
+    <SEO title="Scheduling patients made easy." />
     <Hero
       data={data.allContentfulHomePage}
       styles={
@@ -23,17 +23,22 @@ const IndexPage = ({ data, location }) => (
     >
       Sign up for Free
     </Hero>
-    {/* <Container>
-      <div className="text-center">
-        <h1 className="display-5">How it Works</h1>
-      </div>
-      <br />
-      <CardGroup>
-        <Steps data={data.allContentfulHomePage.edges[0].node} styles={data.allContentfulStyles.edges[0].node.childContentfulStylesButtonJsonNode} />
-      </CardGroup>
+    {/* <Container
+      fluid
+      className="whiteBackground"
+      style={{ paddingBottom: '1em', paddingTop: '1em' }}
+    >
+      <Container>
+        <div className="text-center">
+          <h4 className="display-5">
+            {home.whyTitle}
+          </h4>
+          <p className="lead">
+            {home.whySubtitle}
+          </p>
+        </div>
+      </Container>
     </Container> */}
-    {/* <br /> */}
-    {/* <Banner data={data.allContentfulHomePage} /> */}
 
     {data.allContentfulHomePage.edges[0].node.childContentfulHomePageFeatureListJsonNode.feature.map(
       (feature, index) => {
