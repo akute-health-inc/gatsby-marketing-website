@@ -49,7 +49,7 @@ const HowItWorksPage = ({ data, location }) => (
           (window.location = 'https://schedule-demo.akutehealth.com')
         }
       >
-        Book a Demo
+        Try the Demo - No Email Needed
       </Button>
     </Container>
     <br />
