@@ -23,7 +23,7 @@ const IndexPage = ({ data, location }) => (
     >
       Sign up for Free
     </Hero>
-    {/* <Container
+    <Container
       fluid
       className="whiteBackground"
       style={{ paddingBottom: '1em', paddingTop: '1em' }}
@@ -31,14 +31,14 @@ const IndexPage = ({ data, location }) => (
       <Container>
         <div className="text-center">
           <h4 className="display-5">
-            {home.whyTitle}
+            {data.allContentfulHomePage.edges[0].node.whyTitle}
           </h4>
           <p className="lead">
-            {home.whySubtitle}
+            {data.allContentfulHomePage.edges[0].node.whySubtitle}
           </p>
         </div>
       </Container>
-    </Container> */}
+    </Container>
 
     {data.allContentfulHomePage.edges[0].node.childContentfulHomePageFeatureListJsonNode.feature.map(
       (feature, index) => {
@@ -94,6 +94,8 @@ export const pageQuery = graphql`
         node {
           title
           subtitle
+          whyTitle
+          whySubtitle
           bannerImage {
             fixed(width: 1000) {
               width

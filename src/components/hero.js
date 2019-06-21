@@ -19,9 +19,9 @@ export default class Hero extends React.Component {
             <div className="row">
               <div className="col-lg-7">
                 <h1 className="display-5 title">{content.title}</h1>
-                <h1 className="display-5 title" style={{ color: 'black' }}>
+                {/* <h1 className="display-5 title" style={{ color: 'black' }}>
                   Anytime. Anywhere.
-                </h1>
+                </h1> */}
                 {/* <p className="lead" style={{fontSize: "1.4em"}}>{content.subtitle}</p>
                 <EmailForm styles={styles} name={location}>{this.props.children}</EmailForm> */}
                 {/* </div> */}

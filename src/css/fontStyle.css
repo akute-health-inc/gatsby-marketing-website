@@ -8,10 +8,10 @@
     180deg,
     rgba(2, 0, 36, 1) 0%,
     rgba(97, 180, 123, 0.4) 0%,
-    rgb(255, 255, 255) 100%
+    #f8f9fb 100%
   );
 }
-
+/* rgb(255, 255, 255) 100% */
 .whiteBackground {
   background-color: #f8f9fb;
   border-color: #f8f9fb;
