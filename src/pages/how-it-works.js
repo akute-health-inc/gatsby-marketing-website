@@ -28,8 +28,15 @@ const HowItWorksPage = ({ data, location }) => (
           }
         />
       </CardGroup>
+        <h4 style={{display: "flex", justifyText: "center", justifyContent: "center", alignItems: "center"}}>How to set and monitor patient goals in Akute Health:</h4>
+      <Container style={{display: "flex", justifyText: "center", justifyContent: "center", alignItems: "center"}}>
+        <iframe title="Akute Health EHR Goals Demo" width="560" height="315" src="https://www.youtube.com/embed/BJ6tzNyBNY8" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+      </Container>
     </Container>
     <br />
+    {/* <Container>
+      
+    </Container> */}
     <Container>
       {/* <EmailForm
         styles={
