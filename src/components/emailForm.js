@@ -63,14 +63,36 @@ export default class EmailForm extends React.Component {
       <Fragment>
         {signupPage && (
           <Fragment>
-            <Button
-              style={{ fontSize: '1.4em' }}
-              className="btn-block"
-              color="primary"
-              onClick={() => (window.location = '/signup')}
-            >
-              {this.props.children}
+              <form
+                name={name}
+                method="post"
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
+                onSubmit={this.handleSubmit}
+              >
+                <div>
+                <InputGroup>
+                  <Input type="hidden" name="bot-field" />
+                  <Input type="hidden" name="form-name" value={name} />
+                  <Input
+                    type="email"
+                    name="email"
+                    placeholder="Enter Your Email"
+                    required
+                    onChange={this.handleChange}
+                  />
+                </InputGroup>
+                <Button
+                  style={{ fontSize: '1.4em' }}
+                  className="btn-block"
+                  color="primary"
+                  // onClick={() => (window.location = '/signup')}
+                >
+               {this.props.children}
             </Button>
+            <p style={{color: "grey"}}>No credit card required</p>
+            </div>
+              </form>
           </Fragment>
         )}
         {!signupPage && (

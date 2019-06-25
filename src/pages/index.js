@@ -21,7 +21,7 @@ const IndexPage = ({ data, location }) => (
       location={location.pathname}
       signupPage={true}
     >
-      Sign up for Free
+      Try for Free
     </Hero>
     <Container
       fluid

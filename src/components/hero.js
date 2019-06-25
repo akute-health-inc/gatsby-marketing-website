@@ -37,6 +37,9 @@ export default class Hero extends React.Component {
                 >
                   {this.props.children}
                 </EmailForm>
+                {/* {this.props.children && (
+                  <p style={{color: "grey"}}>No credit card required</p>
+                )} */}
                 {/* {this.props.children === 'Signup for Early Access' && (
                   <Button
                     href="https://signup.akutehealth.com"

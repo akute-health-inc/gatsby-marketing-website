@@ -4,9 +4,9 @@ import Navigation from '../components/navigation'
 import SEO from '../components/seo'
 import Footer from '../components/Footer'
 import 'bootstrap/dist/css/bootstrap.css'
-import { Container, CardGroup, Button } from 'reactstrap'
+import { Container, CardGroup } from 'reactstrap'
 import ComparisonCard from '../components/ComparisonCard'
-// import EmailForm from '../components/emailForm'
+import EmailForm from '../components/emailForm'
 
 const HowItWorksPage = ({ data, location }) => (
   <div>
@@ -38,26 +38,34 @@ const HowItWorksPage = ({ data, location }) => (
       
     </Container> */}
     <Container>
-      {/* <EmailForm
+      <div className="row">
+        <div className="col-lg-3 col-md-3 col-xs-3" />
+        <div className="col-lg-6 col-md-6 col-xs-6">
+      <EmailForm
         styles={
           data.allContentfulStyles.edges[0].node
             .childContentfulStylesButtonJsonNode
         }
-        name={location.pathname}
+        name={"Pro"}
         signupPage={true}
       >
-        Sign Up
-      </EmailForm> */}
+        Try for Free
+      </EmailForm>
+      </div>
+      <div className="col-lg-3 col-md-3 col-xs-3" />
+        {/* <div className="col-lg-6 col-md-6 col-xs-6">
       <Button
-        style={{ fontSize: '1.4em' }}
+        style={{ fontSize: '1.4em'}}
         className="btn-block"
         color="primary"
         onClick={() =>
           (window.location = 'https://schedule-demo.akutehealth.com')
         }
       >
-        Try the Demo - No Email Needed
+        Schedule a Demo
       </Button>
+      </div> */}
+     </div> 
     </Container>
     <br />
     <Footer data={data.allContentfulFooter} />

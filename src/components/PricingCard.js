@@ -79,7 +79,7 @@ export default class PricingCard extends React.Component {
                   {getPlan(index)}
                   <EmailForm
                     styles={styles}
-                    name={tiers.planNames[index]}
+                    name={'Basic'}
                     signupPage={this.props.signupPage}
                   >
                     {tiers.ctas[index]}
