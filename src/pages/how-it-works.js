@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import { Container, CardGroup } from 'reactstrap'
 import ComparisonCard from '../components/ComparisonCard'
 import EmailForm from '../components/emailForm'
+import labGif from "../static/lab_search_gif.gif";
 
 const HowItWorksPage = ({ data, location }) => (
   <div>
@@ -28,9 +29,15 @@ const HowItWorksPage = ({ data, location }) => (
           }
         />
       </CardGroup>
-        <h4 style={{display: "flex", justifyText: "center", justifyContent: "center", alignItems: "center"}}>How to set and monitor patient goals in Akute Health:</h4>
+      <br />
+      <h4 style={{display: "flex", justifyText: "center", justifyContent: "center", alignItems: "center"}}>How to set and monitor patient goals in Akute Health:</h4>
       <Container style={{display: "flex", justifyText: "center", justifyContent: "center", alignItems: "center"}}>
         <iframe title="Akute Health EHR Goals Demo" width="560" height="315" src="https://www.youtube.com/embed/BJ6tzNyBNY8" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+      </Container>
+      <br />
+      <h4 style={{display: "flex", justifyText: "center", justifyContent: "center", alignItems: "center"}}>Easily find labs and sort by date:</h4>
+      <Container style={{display: "flex", justifyText: "center", justifyContent: "center", alignItems: "center"}}>
+        <img width="560" height="315" src={labGif} alt="Easily find labs and sort by date" />
       </Container>
     </Container>
     <br />
