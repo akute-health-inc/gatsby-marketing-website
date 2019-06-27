@@ -30,20 +30,18 @@ const HowItWorksPage = ({ data, location }) => (
         />
       </CardGroup>
       <br />
-      <h4 style={{display: "flex", justifyText: "center", justifyContent: "center", alignItems: "center"}}>How to set and monitor patient goals in Akute Health:</h4>
-      <Container style={{display: "flex", justifyText: "center", justifyContent: "center", alignItems: "center"}}>
-        <iframe title="Akute Health EHR Goals Demo" width="560" height="315" src="https://www.youtube.com/embed/BJ6tzNyBNY8" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-      </Container>
-      <br />
-      <h4 style={{display: "flex", justifyText: "center", justifyContent: "center", alignItems: "center"}}>Easily find labs and sort by date:</h4>
-      <Container style={{display: "flex", justifyText: "center", justifyContent: "center", alignItems: "center"}}>
-        <img width="560" height="315" src={labGif} alt="Easily find labs and sort by date" />
-      </Container>
+        <div className="row" style={{display: "flex", justifyText: "center", justifyContent: "center", alignItems: "center"}}>
+          <div className="col-xs-6" style={{marginRight: "15px"}}>
+            <h4 style={{display: "flex", justifyText: "center", justifyContent: "center", alignItems: "center"}}>How to set and monitor patient goals in Akute Health:</h4>
+            <iframe title="Akute Health EHR Goals Demo" width="560" height="315" src="https://www.youtube.com/embed/BJ6tzNyBNY8" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+          </div>
+          <div className="col-xs-6">
+            <h4 style={{display: "flex", justifyText: "center", justifyContent: "center", alignItems: "center"}}>Easily find labs and sort by date:</h4>
+            <img width="560" height="315" src={labGif} alt="Easily find labs and sort by date" />
+          </div>
+        </div>  
     </Container>
     <br />
-    {/* <Container>
-      
-    </Container> */}
     <Container>
       <div className="row">
         <div className="col-lg-3 col-md-3 col-xs-3" />
