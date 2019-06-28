@@ -37,7 +37,7 @@ const PricingPage = ({data}) => (
       <div className="row">
         <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
           <h5 style={{display: "flex", justifyContent: "center"}}>New solo practice? Need help to grow?</h5>
-          <p>We want to help new direct care providers gain patients and grow. We have a startup program for practices that have fewer than 100 patients to help them grow and improve their marketing efforts. Email us at{' '}
+          <p>We want to help new direct care providers gain patients and grow. We have a startup program for practices that have fewer than 100 patients and need help growing. If this sounds like you, then email us at{' '}
             <OutboundLink
               href={`mailto:${data.allContentfulFooter.edges[0].node.companyContactEmail}`}
               target="_blank"
@@ -50,12 +50,12 @@ const PricingPage = ({data}) => (
       </div>
       <div className="row">
         <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-          <h5>What is considered an appointment?</h5>
-          <p>Any patient appointment created on the calendar. Creating a busy time slot that is not a patient appointment is not considered an appointment.</p>
+          <h5>What is considered an active patient?</h5>
+          <p>Any unique patient who you have billed in the past month.</p>
         </div>
         <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-          <h5>Why price by appointment?</h5>
-          <p>We want to support you as your practice grows. By charging per appointment, we can offer a low cost solution while you are in the early stages while also being incentivized to help you grow. Alignment of incentives are good in all businesses, not just healthcare :)</p>
+          <h5>Why price by active patient?</h5>
+          <p>We want to support you as your practice grows. By charging per active patient, we can offer a low cost solution while you are in the early stages while also being incentivized to help you grow. Alignment of incentives are good in all businesses, not just healthcare :)</p>
         </div>
       </div>
       <div className="row">

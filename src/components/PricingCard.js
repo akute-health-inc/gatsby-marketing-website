@@ -13,7 +13,7 @@ export default class PricingCard extends React.Component {
       if (index === 0) {
         return (
           <ul className="list-unstyled">
-            {tiers.basicFeatures.map(feature => {
+            {tiers.proFeatures.map(feature => {
               return (
                 <li key={feature} style={{ margin: 'auto 0px' }}>
                   {feature}
@@ -25,7 +25,7 @@ export default class PricingCard extends React.Component {
       } else if (index === 1) {
         return (
           <ul className="list-unstyled">
-            {tiers.proFeatures.map(feature => {
+            {tiers.basicFeatures.map(feature => {
               return (
                 <li key={feature} style={{ margin: 'auto 0px' }}>
                   {feature}
