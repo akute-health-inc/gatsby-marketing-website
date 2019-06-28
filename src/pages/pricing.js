@@ -69,7 +69,7 @@ const PricingPage = ({data}) => (
             >
               {data.allContentfulFooter.edges[0].node.companyContactEmail}
             </OutboundLink>
-            {' '}and help you from there.</p>
+            {' '}and we will help you from there.</p>
         </div>
         <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
           <h5>What if I just want to use the scheduling and/or communication?</h5>
