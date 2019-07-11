@@ -1,4 +1,5 @@
 const dotenv = require("dotenv");
+const { BLOCKS } = require('@contentful/rich-text-types');
 
 if (process.env.ENVIRONMENT !== "production") {
   dotenv.config();
@@ -54,6 +55,18 @@ module.exports = {
         exclude: ["/sitemap.xml", "/robots.txt"],
       },
     },
+    // {
+    //   resolve: `@contentful/gatsby-transformer-contentful-richtext`,
+    //   options: {
+    //     renderOptions: {
+    //       renderNode: {
+    //         [BLOCKS.EMBEDDED_ASSET]: node => {
+    //           return `<img src="${node.data.target.fields.file['en-US'].url}" />`
+    //         }
+    //       },
+    //     },
+    //   },
+    // },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',

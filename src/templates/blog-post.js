@@ -44,6 +44,8 @@ class BlogPostTemplate extends React.Component {
           `<h5><blog-h5>${next(node.content)}</blog-h5></h5>`,
         [BLOCKS.HEADING_6]: (node, next) =>
           `<h6><blog-h6>${next(node.content)}</blog-h6></h6>`,
+        [BLOCKS.EMBEDDED_ASSET]: (node, next) =>
+          `<img style="max-width: 100%; height: auto" src="${node.data.target.fields.file['en-US'].url}" />`
       },
     }
     const articleContent = documentToHtmlString(jsonContent, options)
