@@ -11,7 +11,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 const IndexPage = ({ data, location }) => (
   <div>
     <Navigation data={data.allContentfulNavbar} />
-    <SEO title="Scheduling patients made easy." />
+    <SEO title={data.allContentfulHomePage.edges[0].node.title} />
     <Hero
       data={data.allContentfulHomePage}
       styles={
@@ -23,7 +23,7 @@ const IndexPage = ({ data, location }) => (
     >
       Try for Free
     </Hero>
-    <Container
+    {/* <Container
       fluid
       className="whiteBackground"
       style={{ paddingBottom: '1em', paddingTop: '1em' }}
@@ -38,7 +38,7 @@ const IndexPage = ({ data, location }) => (
           </p>
         </div>
       </Container>
-    </Container>
+    </Container> */}
 
     {data.allContentfulHomePage.edges[0].node.childContentfulHomePageFeatureListJsonNode.feature.map(
       (feature, index) => {
