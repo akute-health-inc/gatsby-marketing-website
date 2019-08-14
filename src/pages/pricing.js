@@ -63,11 +63,11 @@ const PricingPage = ({ data }) => (
           </p>
         </div>
         <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-          <h5>How does tiered pricing work?</h5>
+          <h5>Is there a minimum cost?</h5>
           <p>
-            Your first 100 patients will cost $1/ea/mo. Second 100: $0.75/ea.
-            Third 100: $0.50/ea. After that: $0.25/ea. We do this so that your
-            startup costs are low and your costs at scale are reasonable.
+            No minimums! We want to support you from the very beginning of your
+            practice. This means if you have 1 active patient, you pay us
+            $0.50/mo.
           </p>
         </div>
       </div>
