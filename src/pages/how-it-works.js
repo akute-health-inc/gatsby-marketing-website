@@ -76,7 +76,7 @@ const HowItWorksPage = ({ data, location }) => (
             name={'Pro'}
             signupPage={true}
           >
-            Try for Free
+            Request a Demo
           </EmailForm>
         </div>
         <div className="col-lg-3 col-md-3 col-xs-3" />
