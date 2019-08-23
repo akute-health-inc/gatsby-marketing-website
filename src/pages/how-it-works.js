@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import { Container, CardGroup } from 'reactstrap'
 import ComparisonCard from '../components/ComparisonCard'
 import EmailForm from '../components/emailForm'
-import labGif from "../static/lab_search_gif.gif";
+import labGif from '../static/lab_search_gif.gif'
 
 const HowItWorksPage = ({ data, location }) => (
   <div>
@@ -30,34 +30,56 @@ const HowItWorksPage = ({ data, location }) => (
         />
       </CardGroup>
       <br />
-        <div className="row" style={{display: "flex", justifyText: "center", justifyContent: "center", alignItems: "center"}}>
-          <div className="col-xs-6" style={{marginRight: "15px"}}>
+      <div
+        className="row"
+        style={{
+          display: 'flex',
+          justifyText: 'center',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        {/* <div className="col-xs-6" style={{marginRight: "15px"}}>
             <h4 style={{display: "flex", justifyText: "center", justifyContent: "center", alignItems: "center"}}>How to set and monitor patient goals in Akute Health:</h4>
             <iframe title="Akute Health EHR Goals Demo" width="560" height="315" src="https://www.youtube.com/embed/BJ6tzNyBNY8" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-          </div>
-          <div className="col-xs-6">
-            <h4 style={{display: "flex", justifyText: "center", justifyContent: "center", alignItems: "center"}}>Easily find labs and sort by date:</h4>
-            <img width="560" height="315" src={labGif} alt="Easily find labs and sort by date" />
-          </div>
-        </div>  
+          </div> */}
+        <div className="col-xs-6">
+          <h4
+            style={{
+              display: 'flex',
+              justifyText: 'center',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
+            Easily find labs and sort by date:
+          </h4>
+          <img
+            width="560"
+            height="315"
+            src={labGif}
+            alt="Easily find labs and sort by date"
+          />
+        </div>
+      </div>
     </Container>
     <br />
     <Container>
       <div className="row">
         <div className="col-lg-3 col-md-3 col-xs-3" />
         <div className="col-lg-6 col-md-6 col-xs-6">
-      <EmailForm
-        styles={
-          data.allContentfulStyles.edges[0].node
-            .childContentfulStylesButtonJsonNode
-        }
-        name={"Pro"}
-        signupPage={true}
-      >
-        Try for Free
-      </EmailForm>
-      </div>
-      <div className="col-lg-3 col-md-3 col-xs-3" />
+          <EmailForm
+            styles={
+              data.allContentfulStyles.edges[0].node
+                .childContentfulStylesButtonJsonNode
+            }
+            name={'Pro'}
+            signupPage={true}
+          >
+            Try for Free
+          </EmailForm>
+        </div>
+        <div className="col-lg-3 col-md-3 col-xs-3" />
         {/* <div className="col-lg-6 col-md-6 col-xs-6">
       <Button
         style={{ fontSize: '1.4em'}}
@@ -70,7 +92,7 @@ const HowItWorksPage = ({ data, location }) => (
         Schedule a Demo
       </Button>
       </div> */}
-     </div> 
+      </div>
     </Container>
     <br />
     <Footer data={data.allContentfulFooter} />
