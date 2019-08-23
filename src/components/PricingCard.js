@@ -75,6 +75,12 @@ export default class PricingCard extends React.Component {
                   >
                     {tiers.prices[index]}
                   </CardSubtitle>
+                  <CardSubtitle
+                    tag="h6"
+                    style={{ marginTop: '3px', textAlign: 'center' }}
+                  >
+                    $10/mo minimum
+                  </CardSubtitle>
                   <br />
                   {getPlan(index)}
                   <EmailForm

@@ -41,34 +41,17 @@ const PricingPage = ({ data }) => (
       <br />
       <div className="row">
         <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-          <h5 style={{ display: 'flex', justifyContent: 'center' }}>
-            New solo practice? Need help to grow?
-          </h5>
+          <h5>Is there a minimum cost?</h5>
           <p>
-            We want to help new direct care providers gain patients and grow. We
-            have a startup program for practices that have fewer than 100
-            patients and need help growing. If this sounds like you, then email
-            us at{' '}
-            <OutboundLink
-              href={`mailto:${
-                data.allContentfulFooter.edges[0].node.companyContactEmail
-              }`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {data.allContentfulFooter.edges[0].node.companyContactEmail}
-            </OutboundLink>{' '}
-            with the subject, <b>New Practice</b>, and we will discuss the
-            details.
+            We charge a $10/month minumum to help us offset the costs of
+            e-prescribing. We want to support you from the very beginning of
+            your practice. This means, you will pay $10/mo until you have 21
+            patients.
           </p>
         </div>
         <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-          <h5>Is there a minimum cost?</h5>
-          <p>
-            No minimums! We want to support you from the very beginning of your
-            practice. This means if you have 1 active patient, you pay us
-            $0.50/mo.
-          </p>
+          <h5>Do you allow for EPCS?</h5>
+          <p>Yes; we do charge an extra $10/mo for this feature.</p>
         </div>
       </div>
       <div className="row">
@@ -76,7 +59,8 @@ const PricingPage = ({ data }) => (
           <h5>What is considered an active patient?</h5>
           <p>
             Any unique patient who you have billed in the past month. We get
-            this information from your practice management system, usually Hint.
+            this information from your practice management system, usually Hint,
+            or you can manage this directly in the EHR.
           </p>
         </div>
         <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
@@ -94,7 +78,7 @@ const PricingPage = ({ data }) => (
         <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
           <h5>Can I import records from my previous EHR to Akute Health?</h5>
           <p>
-            Yes, just contact us at{' '}
+            Contact us at{' '}
             <OutboundLink
               href={`mailto:${
                 data.allContentfulFooter.edges[0].node.companyContactEmail
@@ -105,24 +89,6 @@ const PricingPage = ({ data }) => (
               {data.allContentfulFooter.edges[0].node.companyContactEmail}
             </OutboundLink>{' '}
             and we will help you from there.
-          </p>
-        </div>
-        <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-          <h5>
-            What if I just want to use the scheduling and/or communication?
-          </h5>
-          <p>
-            You can do that! Just email us at{' '}
-            <OutboundLink
-              href={`mailto:${
-                data.allContentfulFooter.edges[0].node.companyContactEmail
-              }`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {data.allContentfulFooter.edges[0].node.companyContactEmail}
-            </OutboundLink>{' '}
-            for separate pricing and onboarding details.
           </p>
         </div>
       </div>
