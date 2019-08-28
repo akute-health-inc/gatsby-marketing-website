@@ -7,6 +7,7 @@ import Footer from '../components/Footer'
 import FeatureList from '../components/FeatureList'
 import { Container, Button } from 'reactstrap'
 import 'bootstrap/dist/css/bootstrap.css'
+import Testimonials from '../components/Testimonials'
 
 const IndexPage = ({ data, location }) => (
   <div>
@@ -54,6 +55,8 @@ const IndexPage = ({ data, location }) => (
         )
       }
     )}
+    <Testimonials />
+    {/* ))} */}
     <br />
     <Container>
       <Button

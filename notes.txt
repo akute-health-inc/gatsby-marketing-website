@@ -1,0 +1,1 @@
+Built on FHIR standards, leveraging open APIs, patient-provider relationship at the forefront, and ultimate customizability with the Health App Store.

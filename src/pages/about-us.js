@@ -1,20 +1,22 @@
-import React from 'react';
-import { graphql } from 'gatsby';
-import Navigation from '../components/navigation';
-import SEO from '../components/seo';
-import Footer from '../components/Footer';
-import TeamCard from '../components/TeamCard';
-import 'bootstrap/dist/css/bootstrap.css';
-import {
-  Container,
-  CardGroup,
-} from 'reactstrap';
+import React from 'react'
+import { graphql } from 'gatsby'
+import Navigation from '../components/navigation'
+import SEO from '../components/seo'
+import Footer from '../components/Footer'
+import TeamCard from '../components/TeamCard'
+import ContentSection from '../components/ContentSection'
+import TeamBiosSection from '../components/TeamBiosSection'
+import CtaSection from '../components/CtaSection'
+// import 'bootstrap/dist/css/bootstrap.css'
+import { Container, CardGroup } from 'reactstrap'
+// import styles from '../styles.scss'
+import '../css/fontStyle.css'
 
-const AboutUsPage = ({data}) => (
+const AboutUsPage = ({ data }) => (
   <div>
     <Navigation data={data.allContentfulNavbar} />
     <SEO title="About Us" />
-    <Container>
+    {/* <Container>
       <div className="text-center">
         <h1 class="display-4">About Us</h1>
         <p class="lead">Learn about and contact our team.</p>
@@ -26,13 +28,41 @@ const AboutUsPage = ({data}) => (
           )
         })}
       </CardGroup>
-    </Container>
+    </Container> */}
+    <>
+      <div className="heroBackground">
+        <ContentSection
+          // color="white"
+          size="large"
+          title="Heal Happier"
+          subtitle="Enabling doctors and patients to heal happier"
+        />
+      </div>
+      <TeamBiosSection
+        color="white"
+        size="medium"
+        title="Meet the Team"
+        subtitle=""
+        data={data.allContentfulTeamPage.edges[0].node}
+      />
+      <CtaSection
+        color="primary"
+        size="medium"
+        title="Ready to get started?"
+        subtitle=""
+        buttonText="Get Started"
+        // buttonOnClick={() => {
+        //   router.push('/pricing')
+        // }}
+      />
+    </>
+    );
     <br />
     <Footer data={data.allContentfulFooter} />
   </div>
 )
 
-export default AboutUsPage;
+export default AboutUsPage
 
 export const pageQuery = graphql`
   query {
@@ -81,7 +111,7 @@ export const pageQuery = graphql`
     allContentfulFooter {
       edges {
         node {
-          companyName 
+          companyName
           companyContactEmail
           driftAppId
           socialPages

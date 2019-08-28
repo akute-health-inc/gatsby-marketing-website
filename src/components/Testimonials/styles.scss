@@ -1,0 +1,32 @@
+.Testimonials__card {
+  border-radius: 10px;
+  padding: 25px 25px 65px 35px;
+  font-size: 1.1rem;
+  line-height: 1.5em;
+}
+
+.Testimonials__author {
+  margin-top: -40px;
+  height: 80px;
+  display: block;
+  text-align: left;
+  padding: 0 35px;
+  position: relative;
+  z-index: 0;
+}
+
+.Testimonials__avatar-wrapper {
+  position: absolute;
+  top: 5px;
+  right: 66%;
+}
+
+.Testimonials__info {
+  left: 38%;
+  top: 9px;
+  position: absolute;
+}
+
+.Testimonials__company {
+  margin-top: 13px;
+}
