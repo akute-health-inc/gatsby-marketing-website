@@ -60,6 +60,21 @@ export default class Navigation extends React.Component {
                     </NavItem>
                   )
                 })}
+                <NavItem
+                  key={'signup'}
+                  style={{
+                    backgroundColor: '#61b47b',
+                    maxWidth: '90px',
+                    borderRadius: '15px',
+                    fontWeight: 'bold',
+                    paddingLeft: '10px',
+                    paddingRight: '10px',
+                  }}
+                >
+                  <NavLink href={`https://app.akutehealth.com/#/signup`}>
+                    Signup
+                  </NavLink>
+                </NavItem>
               </Nav>
             </Collapse>
           </Navbar>
