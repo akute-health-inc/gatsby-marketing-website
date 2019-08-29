@@ -1,16 +1,13 @@
-import React from 'react';
-import { graphql } from 'gatsby';
-import Navigation from '../components/navigation';
-import SEO from '../components/seo';
-import Footer from '../components/Footer';
-import TeamCard from '../components/TeamCard';
-import 'bootstrap/dist/css/bootstrap.css';
-import {
-  Container,
-  CardGroup,
-} from 'reactstrap';
+import React from 'react'
+import { graphql } from 'gatsby'
+import Navigation from '../components/navigation'
+import SEO from '../components/seo'
+import Footer from '../components/Footer'
+import TeamCard from '../components/TeamCard'
+import 'bootstrap/dist/css/bootstrap.css'
+import { Container, CardGroup } from 'reactstrap'
 
-const AboutUsPage = ({data}) => (
+const AboutUsPage = ({ data }) => (
   <div>
     <Navigation data={data.allContentfulNavbar} />
     <SEO title="About Us" />
@@ -22,7 +19,12 @@ const AboutUsPage = ({data}) => (
       <CardGroup>
         {data.allContentfulTeamPage.edges[0].node.names.map((name, index) => {
           return (
-            <TeamCard data={data.allContentfulTeamPage.edges[0].node} index={index} />
+            <div>
+              <TeamCard
+                data={data.allContentfulTeamPage.edges[0].node}
+                index={index}
+              />
+            </div>
           )
         })}
       </CardGroup>
@@ -32,7 +34,7 @@ const AboutUsPage = ({data}) => (
   </div>
 )
 
-export default AboutUsPage;
+export default AboutUsPage
 
 export const pageQuery = graphql`
   query {
@@ -81,7 +83,7 @@ export const pageQuery = graphql`
     allContentfulFooter {
       edges {
         node {
-          companyName 
+          companyName
           companyContactEmail
           driftAppId
           socialPages

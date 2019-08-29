@@ -55,6 +55,59 @@ const IndexPage = ({ data, location }) => (
       }
     )}
     <br />
+    <section
+      className="col-xs-12 col-sm-10 col-md-8 team-section text-center my-5"
+      style={{
+        margin: '0 auto',
+        alignContent: 'center',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
+    >
+      <h2 className="h1-responsive font-weight-bold my-5">Testimonials</h2>
+      <div
+        className="row text-center"
+        style={{
+          margin: '0 auto',
+          alignContent: 'center',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <div className="col-md-8 mb-md-0 mb-5">
+          <div className="testimonial">
+            <link
+              rel="stylesheet"
+              href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+              integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+              crossOrigin="anonymous"
+            />
+            <div className="avatar mx-auto">
+              <img
+                src="https://cdn.membershipworks.com/u/5bfb4a97f033bf2b52209c08_lgl.jpg?1543358867"
+                className="rounded-circle z-depth-1 img-fluid"
+                style={{ maxWidth: '35%' }}
+              />
+            </div>
+            <h4 className="font-weight-bold dark-grey-text mt-4">
+              Dr. Jack Forbush, DO
+            </h4>
+            <h6 className="font-weight-bold blue-text my-3">
+              Osteopathic Center for Family Medicine
+            </h6>
+            <p className="font-weight-normal dark-grey-text">
+              <i className="fas fa-quote-left pr-2" />
+              I’ve been working with AkuteHealth and must say that the developer
+              has some fantastic ideas and plans for the product. They just
+              released a video showing the e-prescribing integration which looks
+              incredibly user-friendly! AkuteHealth is going to be very
+              disruptive (in a good way!)
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <br />
     <Container>
       <Button
         style={{ fontSize: '1.4em' }}
