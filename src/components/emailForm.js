@@ -63,14 +63,14 @@ export default class EmailForm extends React.Component {
       <Fragment>
         {signupPage && (
           <Fragment>
-              <form
-                name={name}
-                method="post"
-                data-netlify="true"
-                data-netlify-honeypot="bot-field"
-                onSubmit={this.handleSubmit}
-              >
-                <div>
+            <form
+              name={name}
+              method="post"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+              onSubmit={this.handleSubmit}
+            >
+              <div>
                 <InputGroup>
                   <Input type="hidden" name="bot-field" />
                   <Input type="hidden" name="form-name" value={name} />
@@ -88,11 +88,11 @@ export default class EmailForm extends React.Component {
                   color="primary"
                   // onClick={() => (window.location = '/signup')}
                 >
-               {this.props.children}
-            </Button>
-            <p style={{color: "grey"}}>No credit card required</p>
-            </div>
-              </form>
+                  {this.props.children}
+                </Button>
+                {/* <p style={{color: "grey"}}>No credit card required</p> */}
+              </div>
+            </form>
           </Fragment>
         )}
         {!signupPage && (

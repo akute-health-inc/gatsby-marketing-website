@@ -43,7 +43,7 @@ const PricingPage = ({ data }) => (
         <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
           <h5>Is there a minimum cost?</h5>
           <p>
-            We charge a $10/month minumum to help us offset the costs of
+            We charge a $10/month minimum to help us offset the costs of
             e-prescribing. We want to support you from the very beginning of
             your practice. This means, you will pay $10/mo until you have 21
             patients.
@@ -89,6 +89,14 @@ const PricingPage = ({ data }) => (
               {data.allContentfulFooter.edges[0].node.companyContactEmail}
             </OutboundLink>{' '}
             and we will help you from there.
+          </p>
+        </div>
+        <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+          <h5>How does the free trial work?</h5>
+          <p>
+            You can use the EHR, HIPAA compliant, for free for 14 days except
+            for e-prescribing. If you want e-prescribe, you're free trial will
+            end due to our fixed costs for e-prescribers.
           </p>
         </div>
       </div>
