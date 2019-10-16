@@ -22,6 +22,7 @@ function SEO({
         const siteAuthor = author || siteData.author
         const ogType = type || 'website'
         const siteImage = image || ''
+        const metaKeywords = keywords.length > 0 ? keywords : siteData.keywords
         return (
           <Helmet
             htmlAttributes={{
@@ -76,10 +77,10 @@ function SEO({
               },
             ]
               .concat(
-                keywords.length > 0
+                metaKeywords.length > 0
                   ? {
                       name: `keywords`,
-                      content: keywords.join(`, `),
+                      content: metaKeywords.join(`, `),
                     }
                   : []
               )
