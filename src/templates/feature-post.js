@@ -24,7 +24,7 @@ class BlogPostTemplate extends React.Component {
           keywords={featureData.keywords}
           description={featureData.subtitle}
           type="article"
-          // image={imageUrl}
+          image={'url(' + featureData.image.fluid.src + ')'}
         />
         <Container>
           <div className="container">
