@@ -43,15 +43,15 @@ const PricingPage = ({ data }) => (
         <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
           <h5>Is there a minimum cost?</h5>
           <p>
-            We charge a $10/month minimum to help us offset the costs of
+            We charge a $50/month minimum to help us offset the costs of
             e-prescribing. We want to support you from the very beginning of
-            your practice. This means, you will pay $10/mo until you have 21
+            your practice. This means, you will pay $50/mo until you have 101
             patients.
           </p>
         </div>
         <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
           <h5>Do you allow for EPCS?</h5>
-          <p>Yes; we do charge an extra $10/mo for this feature.</p>
+          <p>Yes; we do charge an extra $15/mo for this feature.</p>
         </div>
       </div>
       <div className="row">
