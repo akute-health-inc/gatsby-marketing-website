@@ -79,7 +79,7 @@ export default class PricingCard extends React.Component {
                     tag="h6"
                     style={{ marginTop: '3px', textAlign: 'center' }}
                   >
-                    $10/mo minimum
+                    $50/mo minimum
                   </CardSubtitle>
                   <br />
                   {getPlan(index)}
