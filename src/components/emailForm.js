@@ -42,9 +42,10 @@ export default class EmailForm extends React.Component {
         ...this.state,
       }),
     })
-      .then(() =>
+      .then(() => {
         alert('Thanks for signing up! We will reach out to you shortly.')
-      )
+        window.open('https://calendly.com/akutehealth/video-meeting-demo')
+      })
       .catch(error => alert(error))
   }
 
