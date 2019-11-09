@@ -19,7 +19,14 @@ export default class FeatureList extends React.Component {
     }
     if (image.title === 'Booking') {
       imgTag = (
-        <a href="./how-it-works">
+        <a href="./features/patient-self-scheduling">
+          <Img fluid={image.fluid} alt={image.title} />
+        </a>
+      )
+    }
+    if (image.title === 'Done') {
+      imgTag = (
+        <a href="./features/e-prescribing">
           <Img fluid={image.fluid} alt={image.title} />
         </a>
       )
@@ -29,7 +36,22 @@ export default class FeatureList extends React.Component {
         <Container>
           <div className="row" style={{ borderColor: 'white' }}>
             <div className="col-lg-8 col-md-6 order-lg-1 order-12 align-self-center">
-              <h3 className="display-5">{feature.title}</h3>
+              {image.title === 'Booking' && (
+                <a
+                  href="./features/patient-self-scheduling"
+                  style={{ color: '#61b47b' }}
+                >
+                  <h3 className="display-5">{feature.title}</h3>
+                </a>
+              )}
+              {image.title === 'Done' && (
+                <a href="./features/e-prescribing" style={{ color: '#61b47b' }}>
+                  <h3 className="display-5">{feature.title}</h3>
+                </a>
+              )}
+              {image.title !== 'Booking' && image.title !== 'Done' && (
+                <h3 className="display-5">{feature.title}</h3>
+              )}
               <p className="lead">{feature.subtitle}</p>
             </div>
             <div className="col-lg-4 col-md-6 order-lg-12 order-12">
@@ -48,14 +70,7 @@ export default class FeatureList extends React.Component {
               {imgTag}
             </div>
             <div className="col-lg-8 col-md-6 order-lg-12 order-1 align-self-center">
-              {image.title === 'Booking' && (
-                <a href="./how-it-works" style={{ color: '#61b47b' }}>
-                  <h3 className="display-5">{feature.title}</h3>
-                </a>
-              )}
-              {image.title !== 'Booking' && (
-                <h3 className="display-5">{feature.title}</h3>
-              )}
+              <h3 className="display-5">{feature.title}</h3>
               <p className="lead">{feature.subtitle}</p>
             </div>
           </div>
