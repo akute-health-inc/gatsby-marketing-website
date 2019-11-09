@@ -12,7 +12,7 @@ import {
 import PropTypes from 'prop-types'
 import Img from 'gatsby-image'
 import '../css/fontStyle.css'
-import AnnouncementBanner from './AnnouncementBanner'
+import AnnouncementBanner from './announcementBanner'
 
 export default class Navigation extends React.Component {
   constructor(props) {
