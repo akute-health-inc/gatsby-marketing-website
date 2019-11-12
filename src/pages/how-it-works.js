@@ -30,34 +30,27 @@ const HowItWorksPage = ({ data, location }) => (
         />
       </CardGroup>
       <br />
-      <Container
-        className="row"
-        style={{
-          display: 'flex',
-          justifyText: 'center',
-          justifyContent: 'center',
-          alignItems: 'center',
-          // maxWidth: '70vw',
-        }}
-      >
-        <div className="col-xs-6">
-          <h5
-            style={{
-              display: 'flex',
-              justifyText: 'center',
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}
-          >
-            Uploading documents and document analysis walkthrough
-          </h5>
+      <Container>
+        <h5>How to Get Started in Just a Few Minutes</h5>
+        <br />
+        <div
+          style={{
+            position: 'relative',
+            paddingBottom: '56.25%',
+            paddingTop: 25,
+            height: 0,
+          }}
+        >
           <iframe
-            title="Document Feature Walkthrough"
-            // width="560"
-            width="100%"
-            // height="100%"
-            height="315"
-            src="https://www.youtube.com/embed/j8xvi8joGxk"
+            title="Getting Started Walkthrough"
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+            }}
+            src="https://www.youtube.com/embed/IEuqJgO-TtU"
             frameBorder="0"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
