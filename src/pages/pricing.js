@@ -51,6 +51,9 @@ const PricingPage = ({ data }) => (
         </div>
         <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
           <h5>Do you allow for EPCS?</h5>
+          <p>
+            <i>Coming summer 2020</i>
+          </p>
           <p>Yes; we do charge an extra $15/mo for this feature.</p>
         </div>
       </div>
