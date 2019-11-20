@@ -36,7 +36,7 @@ export default class Navigation extends React.Component {
 
     return (
       <React.Fragment>
-        <AnnouncementBanner />
+        {/* <AnnouncementBanner /> */}
         <Container fluid>
           <Container>
             <Navbar sticky="top" light expand="lg">
