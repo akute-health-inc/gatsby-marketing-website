@@ -1,9 +1,9 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Navigation from '../components/navigation'
-import BlogHeader from '../components/BlogHeader'
-import Footer from '../components/Footer'
-import EmailForm from '../components/emailForm'
+import Navigation from '../_components/navigation'
+import BlogHeader from '../_components/BlogHeader'
+import Footer from '../_components/Footer'
+import EmailForm from '../_components/emailForm'
 import { Container } from 'reactstrap'
 import PropTypes from 'prop-types'
 import SEO from '../components/seo'
@@ -45,7 +45,7 @@ class BlogPostTemplate extends React.Component {
         [BLOCKS.HEADING_6]: (node, next) =>
           `<h6><blog-h6>${next(node.content)}</blog-h6></h6>`,
         [BLOCKS.EMBEDDED_ASSET]: (node, next) =>
-          `<img style="max-width: 100%; height: auto" src="${node.data.target.fields.file['en-US'].url}" />`
+          `<img style="max-width: 100%; height: auto" src="${node.data.target.fields.file['en-US'].url}" />`,
       },
     }
     const articleContent = documentToHtmlString(jsonContent, options)
@@ -82,36 +82,28 @@ class BlogPostTemplate extends React.Component {
           <div id="share">
             <OutboundLink
               className="facebook"
-              href={`https://www.facebook.com/share.php?u=${href}&title=${
-                blogData.title
-              }`}
+              href={`https://www.facebook.com/share.php?u=${href}&title=${blogData.title}`}
               target="blank"
             >
               <i className="fab fa-facebook-f" />
             </OutboundLink>
             <OutboundLink
               className="twitter"
-              href={`https://twitter.com/intent/tweet?status=${
-                blogData.title
-              }+${href}`}
+              href={`https://twitter.com/intent/tweet?status=${blogData.title}+${href}`}
               target="blank"
             >
               <i className="fab fa-twitter" />
             </OutboundLink>
             <OutboundLink
               className="linkedin"
-              href={`https://www.linkedin.com/shareArticle?mini=true&url=${href}&title=${
-                blogData.title
-              }&source=${origin}`}
+              href={`https://www.linkedin.com/shareArticle?mini=true&url=${href}&title=${blogData.title}&source=${origin}`}
               target="blank"
             >
               <i className="fab fa-linkedin-in" />
             </OutboundLink>
             <OutboundLink
               className="pinterest"
-              href={`https://pinterest.com/pin/create/bookmarklet/?media=${imageUrl}&url=${href}&is_video=false&description=${
-                blogData.title
-              }`}
+              href={`https://pinterest.com/pin/create/bookmarklet/?media=${imageUrl}&url=${href}&is_video=false&description=${blogData.title}`}
               target="blank"
             >
               <i className="fab fa-pinterest-p" />
