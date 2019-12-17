@@ -1,69 +1,56 @@
-import React from 'react';
-import { graphql } from 'gatsby';
-import Navigation from '../components/navigation';
-import Footer from '../components/Footer';
-import PropTypes from 'prop-types';
-import SEO from '../components/seo';
-import {
-  Container,
-} from 'reactstrap';
-import 'bootstrap/dist/css/bootstrap.css';
-import '../css/blog.css';
+import React from 'react'
+import { graphql } from 'gatsby'
+import Navigation from '../components/navigation'
+import Footer from '../components/Footer'
+import PropTypes from 'prop-types'
+import SEO from '../components/seo'
+import { Container } from 'reactstrap'
+import 'bootstrap/dist/css/bootstrap.css'
+import '../css/blog.css'
 
-class Blog extends React.Component {
+class Features extends React.Component {
   render() {
     const siteData = this.props.data
-    const blogData = this.props.data.allContentfulBlogPost.edges
+    const featureData = this.props.data.allContentfulFeaturePost.edges
     return (
       <div>
         <Navigation data={siteData.allContentfulNavbar} />
-        <SEO title="Blog" />
-        <Container id="site-main" className="site-main outer" role="main" style={{minHeight: "85vh"}}>
+        <SEO title="Akute EHR Features" />
+        <Container
+          id="site-main"
+          className="site-main outer"
+          role="main"
+          style={{ minHeight: '85vh' }}
+        >
           <div className="inner">
             <div className="post-feed">
-              {blogData.map(edge => {
-                const post = edge.node;
-                console.log(post);
+              {featureData.map(edge => {
+                const post = edge.node
                 return (
-                  <article className="post-card post">
+                  <article className="post-card post" key={post.slug}>
                     <a
                       className="post-card-image-link"
-                      href={`/blog/${post.topicCluster}/${post.slug}`}
+                      href={`/features/${post.slug}`}
                     >
                       <div
                         className="post-card-image"
                         style={{
-                          backgroundImage: 'url('+ post.image.fluid.src + ')',
+                          backgroundImage: 'url(' + post.image.fluid.src + ')',
                         }}
                       />
                     </a>
                     <div className="post-card-content">
                       <a
                         className="post-card-content-link"
-                        href={`/blog/${post.topicCluster}/${post.slug}`}
+                        href={`/features/${post.slug}`}
                       >
                         <header className="post-card-header">
-                          <span className="post-card-tags">{post.topicCluster}</span>
-                          <h2 className="post-card-title">
-                            {post.title}
-                          </h2>
+                          <h2 className="post-card-title">{post.title}</h2>
                         </header>
                         <section className="post-card-excerpt">
-                          <p>
-                            {post.subtitle}
-                          </p>
+                          <p>{post.subtitle}</p>
                         </section>
                       </a>
-                      <footer className="post-card-meta">
-                        <img
-                          className="author-profile-image"
-                          src={post.authorImage.fluid.src}
-                          alt={post.author}
-                        />
-                        <span className="post-card-author">
-                          <a href="/about-us">{post.author}</a>
-                        </span>
-                      </footer>
                     </div>
                   </article>
                 )
@@ -77,9 +64,9 @@ class Blog extends React.Component {
   }
 }
 
-export default Blog
+export default Features
 
-Blog.propTypes = {
+Features.propTypes = {
   data: PropTypes.object.isRequired,
 }
 
@@ -100,12 +87,11 @@ export const pageQuery = graphql`
         }
       }
     }
-    allContentfulBlogPost {
+    allContentfulFeaturePost {
       edges {
         node {
           title
           subtitle
-          author
           postDate
           image {
             fluid(maxWidth: 1500) {
@@ -113,16 +99,11 @@ export const pageQuery = graphql`
             }
           }
           keywords
-          topicCluster
           slug
-          content {
-            content
-          }
-          authorImage {
-            fluid(maxWidth: 100) {
-              src
-            }
-          }
+          extraTitle
+          extraSubtitle
+          extraCta
+          extraLink
         }
       }
     }
